@@ -7,9 +7,10 @@ import {
   ScrollView,
   ActivityIndicator,
   TouchableOpacity,
-  AsyncStorage
+  AsyncStorage,
 } from "react-native";
 import { Container, Item, Form, Input, Label, Icon, Left } from "native-base";
+import {styles} from './style'
 
 import { connect } from "react-redux";
 import SplashScreen from "react-native-splash-screen";
@@ -20,6 +21,7 @@ import {
   addToFav,
   intializeFav
 } from "../../actions/movie";
+import {mainColor} from '../../configs/global'; 
 
 // import External Style
 import commStyle from "../commStyle";
@@ -71,23 +73,23 @@ class Home extends Component {
     return (
       <Container style={commStyle.container}>
         {/* Search Input Feild */}
-        <View style={styles.section}>
-          <Form>
-            <Label style={styles.label}>Search</Label>
-            <Item style={{ borderBottomColor: "grey" }}>
+        <View style={styles.searchView}>
+          <Form style={styles.searchForm}>
+            <Item>
               <Input
                 placeholder="Search for movie here"
                 style={styles.searchInput}
                 placeholderStyle={styles.placeholder}
                 onChangeText={m => this.setState({ searchMovie: m })}
+                onSubmitEditing={this.gotoSearchRes}
               />
               <TouchableOpacity onPress={this.gotoSearchRes}>
-                <Icon name="search" style={{ color: "grey" }} />
+                <Icon name="search" style={{ color: mainColor }} />
               </TouchableOpacity>
             </Item>
           </Form>
         </View>
-        <ScrollView>
+        <ScrollView contentContainerStyle={styles.scrollVeiwCont}>
           {/* Recent Movies */}
           <View style={styles.section}>
             <Item style={{ borderBottomWidth: 0 }}>
@@ -109,7 +111,7 @@ class Home extends Component {
               </ScrollView>
             ) : (
               <View style={styles.nowPlayingMovies}>
-                <ActivityIndicator color="gold" size="large" />
+                <ActivityIndicator color={mainColor} size="large" />
               </View>
             )}
           </View>
@@ -136,7 +138,7 @@ class Home extends Component {
               ))
             ) : (
               <View style={styles.popularMovies}>
-                <ActivityIndicator color="gold" size="large" />
+                <ActivityIndicator color={mainColor} size="large" />
               </View>
             )}
           </View>
@@ -157,33 +159,3 @@ export default connect(mapStateToProps, {
   intializeFav
 })(Home);
 
-// Styling
-const styles = StyleSheet.create({
-  label: {
-    color: "grey",
-    fontWeight: "100",
-    fontFamily: "Lato-Light"
-  },
-  searchInput: {
-    height: 0.1 * Height,
-    fontSize: 24,
-    width: Width,
-    fontFamily: "Lato-Light",
-    color: "#333"
-  },
-  headLine: {
-    fontSize: 24,
-    color: "#333",
-    fontFamily: "Lato-Light",
-    marginBottom: 0.06 * Height
-  },
-  section: {
-    paddingHorizontal: 0.05 * Width,
-    marginVertical: 0.05 * Width
-  },
-  nowPlayingMovies: {
-    height: 0.3 * Height,
-    alignItems: "center",
-    justifyContent: "center"
-  }
-});

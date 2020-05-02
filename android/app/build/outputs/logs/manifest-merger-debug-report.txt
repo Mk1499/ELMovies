@@ -1,18 +1,18 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:1:1-36:12
-INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:1:1-36:12
-INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:1:1-36:12
-INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:1:1-36:12
-MERGED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:1:1-36:12
-MERGED from [:react-native-splash-screen] /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/node_modules/react-native-splash-screen/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-14:12
-MERGED from [:react-native-gesture-handler] /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
-MERGED from [:react-native-reanimated] /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/node_modules/react-native-reanimated/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
-MERGED from [:react-native-share] /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/node_modules/react-native-share/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-28:12
-MERGED from [:react-native-shared-element] /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/node_modules/react-native-shared-element/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
-MERGED from [com.facebook.react:react-native:0.61.3] /home/mkhaled/.gradle/caches/transforms-2/files-2.1/e70ee6fdea34a7fa31d763ff7b8c90db/AndroidManifest.xml:2:1-13:12
-MERGED from [org.webkit:android-jsc:r245459] /home/mkhaled/.gradle/caches/transforms-2/files-2.1/d6ecfe7791c3a3e92eb0333dcb1beb4d/AndroidManifest.xml:2:1-11:12
-MERGED from [:react-native-linear-gradient] /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/node_modules/react-native-linear-gradient/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:1:1-36:12
+INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:1:1-36:12
+INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:1:1-36:12
+INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:1:1-36:12
+MERGED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:1:1-36:12
+MERGED from [:react-native-splash-screen] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/react-native-splash-screen/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-14:12
+MERGED from [:react-native-gesture-handler] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-reanimated] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/react-native-reanimated/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-share] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/react-native-share/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-28:12
+MERGED from [:react-native-shared-element] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/react-native-shared-element/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [com.facebook.react:react-native:0.61.3] /home/mkhaled/.gradle/caches/transforms-2/files-2.1/5dd01de7201a4e944eaadd6a1142238a/AndroidManifest.xml:2:1-13:12
+MERGED from [org.webkit:android-jsc:r245459] /home/mkhaled/.gradle/caches/transforms-2/files-2.1/5de55d4634511dba04e57ea4db6c64af/AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-linear-gradient] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/react-native-linear-gradient/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat:1.0.2] /home/mkhaled/.gradle/caches/transforms-2/files-2.1/3d7007ebd922abcd814408e19a2cdb41/AndroidManifest.xml:17:1-22:12
 MERGED from [com.facebook.fresco:fresco:2.0.0] /home/mkhaled/.gradle/caches/transforms-2/files-2.1/92fd0852ae3bdbbeb5d8fcecf5fed5af/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:imagepipeline-okhttp3:2.0.0] /home/mkhaled/.gradle/caches/transforms-2/files-2.1/65cf9998f26c8d5ff147e0c47a11edc2/AndroidManifest.xml:2:1-9:12
@@ -49,40 +49,40 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/mkhaled/.gr
 MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/mkhaled/.gradle/caches/transforms-2/files-2.1/d9a0e6924e4e2c12167746c736537ca8/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] /home/mkhaled/.gradle/caches/transforms-2/files-2.1/f052bcaf08657bffea23bca46e880ac7/AndroidManifest.xml:17:1-22:12
 MERGED from [com.facebook.fresco:fbcore:2.0.0] /home/mkhaled/.gradle/caches/transforms-2/files-2.1/f49273bca8a66ac51d3825cd5b534a6b/AndroidManifest.xml:2:1-9:12
-INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/debug/AndroidManifest.xml:2:1-8:12
-INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/debug/AndroidManifest.xml:2:1-8:12
-INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/debug/AndroidManifest.xml:2:1-8:12
+INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/debug/AndroidManifest.xml:2:1-8:12
+INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/debug/AndroidManifest.xml:2:1-8:12
+INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/debug/AndroidManifest.xml:2:1-8:12
 	package
-		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:2:3-24
-		INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml
-		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:2:3-24
-		INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/debug/AndroidManifest.xml
+		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:2:3-24
+		INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml
+		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:2:3-24
+		INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/debug/AndroidManifest.xml
 	android:versionName
-		INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml
-		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:1:1-36:12
-		INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/debug/AndroidManifest.xml
+		INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml
+		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:1:1-36:12
+		INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/debug/AndroidManifest.xml
 	xmlns:tools
-		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/debug/AndroidManifest.xml:3:5-51
+		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/debug/AndroidManifest.xml:3:5-51
 	android:versionCode
-		INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml
-		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:1:1-36:12
-		INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/debug/AndroidManifest.xml
+		INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml
+		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:1:1-36:12
+		INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/debug/AndroidManifest.xml
 	xmlns:android
-		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:1:11-69
+		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:1:11-69
 uses-permission#android.permission.INTERNET
-ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:4:5-67
+ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:4:5-67
 	android:name
-		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:4:22-64
+		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:4:22-64
 application
-ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:6:5-34:19
-MERGED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:6:5-34:19
-MERGED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:6:5-34:19
-MERGED from [:react-native-splash-screen] /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/node_modules/react-native-splash-screen/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-12:19
-MERGED from [:react-native-splash-screen] /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/node_modules/react-native-splash-screen/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-12:19
-MERGED from [:react-native-share] /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/node_modules/react-native-share/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:5-26:19
-MERGED from [:react-native-share] /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/node_modules/react-native-share/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:5-26:19
-MERGED from [com.facebook.react:react-native:0.61.3] /home/mkhaled/.gradle/caches/transforms-2/files-2.1/e70ee6fdea34a7fa31d763ff7b8c90db/AndroidManifest.xml:11:5-20
-MERGED from [com.facebook.react:react-native:0.61.3] /home/mkhaled/.gradle/caches/transforms-2/files-2.1/e70ee6fdea34a7fa31d763ff7b8c90db/AndroidManifest.xml:11:5-20
+ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:6:5-34:19
+MERGED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:6:5-34:19
+MERGED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:6:5-34:19
+MERGED from [:react-native-splash-screen] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/react-native-splash-screen/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-12:19
+MERGED from [:react-native-splash-screen] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/react-native-splash-screen/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-12:19
+MERGED from [:react-native-share] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/react-native-share/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:5-26:19
+MERGED from [:react-native-share] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/react-native-share/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:5-26:19
+MERGED from [com.facebook.react:react-native:0.61.3] /home/mkhaled/.gradle/caches/transforms-2/files-2.1/5dd01de7201a4e944eaadd6a1142238a/AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.react:react-native:0.61.3] /home/mkhaled/.gradle/caches/transforms-2/files-2.1/5dd01de7201a4e944eaadd6a1142238a/AndroidManifest.xml:11:5-20
 MERGED from [com.facebook.soloader:soloader:0.6.0] /home/mkhaled/.gradle/caches/transforms-2/files-2.1/94d7e0b37554e5171250586a76144442/AndroidManifest.xml:11:5-20
 MERGED from [com.facebook.soloader:soloader:0.6.0] /home/mkhaled/.gradle/caches/transforms-2/files-2.1/94d7e0b37554e5171250586a76144442/AndroidManifest.xml:11:5-20
 MERGED from [androidx.core:core:1.0.1] /home/mkhaled/.gradle/caches/transforms-2/files-2.1/b6ccad933b6b820fac63da371a2df835/AndroidManifest.xml:22:5-89
@@ -92,81 +92,81 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/mkhal
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.0.1] /home/mkhaled/.gradle/caches/transforms-2/files-2.1/b6ccad933b6b820fac63da371a2df835/AndroidManifest.xml:22:18-86
 	android:label
-		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:8:7-39
-		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:8:7-39
+		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:8:7-39
+		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:8:7-39
 	tools:ignore
-		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/debug/AndroidManifest.xml:7:75-114
+		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/debug/AndroidManifest.xml:7:75-114
 	android:roundIcon
-		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:10:7-52
-		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:10:7-52
+		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:10:7-52
+		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:10:7-52
 	tools:targetApi
-		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/debug/AndroidManifest.xml:7:54-74
+		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/debug/AndroidManifest.xml:7:54-74
 	android:icon
-		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:9:7-41
-		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:9:7-41
+		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:9:7-41
+		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:9:7-41
 	android:allowBackup
-		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:11:7-34
-		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:11:7-34
+		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:11:7-34
+		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:11:7-34
 	android:theme
-		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:12:7-38
-		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:12:7-38
+		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:12:7-38
+		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:12:7-38
 	android:usesCleartextTraffic
-		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/debug/AndroidManifest.xml:7:18-53
+		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/debug/AndroidManifest.xml:7:18-53
 	android:name
-		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:7:7-38
-		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:7:7-38
+		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:7:7-38
+		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:7:7-38
 activity#com.elmovie.SplashActivity
-ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:14:6-22:20
+ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:14:6-22:20
 	android:label
-		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:17:11-43
+		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:17:11-43
 	android:theme
-		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:16:11-45
+		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:16:11-45
 	android:name
-		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:15:11-41
+		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:15:11-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:18:11-21:27
+ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:18:11-21:27
 action#android.intent.action.MAIN
-ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:19:15-67
+ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:19:15-67
 	android:name
-		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:19:23-64
+		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:19:23-64
 category#android.intent.category.LAUNCHER
-ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:20:15-75
+ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:20:15-75
 	android:name
-		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:20:25-72
+		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:20:25-72
 activity#com.elmovie.MainActivity
-ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:23:7-32:18
+ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:23:7-32:18
 	android:label
-		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:25:9-41
+		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:25:9-41
 	android:windowSoftInputMode
-		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:27:9-51
+		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:27:9-51
 	android:configChanges
-		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:26:9-79
+		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:26:9-79
 	android:name
-		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:24:9-37
+		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:24:9-37
 activity#com.facebook.react.devsupport.DevSettingsActivity
-ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:33:7-84
+ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:33:7-84
 	android:name
-		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:33:17-81
+		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:33:17-81
 uses-sdk
-INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml
-INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml
-MERGED from [:react-native-splash-screen] /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/node_modules/react-native-splash-screen/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-splash-screen] /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/node_modules/react-native-splash-screen/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-gesture-handler] /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-gesture-handler] /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-reanimated] /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/node_modules/react-native-reanimated/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-reanimated] /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/node_modules/react-native-reanimated/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-share] /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/node_modules/react-native-share/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-10:41
-MERGED from [:react-native-share] /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/node_modules/react-native-share/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-10:41
-MERGED from [:react-native-shared-element] /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/node_modules/react-native-shared-element/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-shared-element] /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/node_modules/react-native-shared-element/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
-MERGED from [com.facebook.react:react-native:0.61.3] /home/mkhaled/.gradle/caches/transforms-2/files-2.1/e70ee6fdea34a7fa31d763ff7b8c90db/AndroidManifest.xml:7:5-9:41
-MERGED from [com.facebook.react:react-native:0.61.3] /home/mkhaled/.gradle/caches/transforms-2/files-2.1/e70ee6fdea34a7fa31d763ff7b8c90db/AndroidManifest.xml:7:5-9:41
-MERGED from [org.webkit:android-jsc:r245459] /home/mkhaled/.gradle/caches/transforms-2/files-2.1/d6ecfe7791c3a3e92eb0333dcb1beb4d/AndroidManifest.xml:7:5-9:41
-MERGED from [org.webkit:android-jsc:r245459] /home/mkhaled/.gradle/caches/transforms-2/files-2.1/d6ecfe7791c3a3e92eb0333dcb1beb4d/AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-linear-gradient] /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/node_modules/react-native-linear-gradient/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-linear-gradient] /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/node_modules/react-native-linear-gradient/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml
+INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml
+MERGED from [:react-native-splash-screen] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/react-native-splash-screen/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-splash-screen] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/react-native-splash-screen/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-gesture-handler] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-gesture-handler] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-reanimated] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/react-native-reanimated/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-reanimated] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/react-native-reanimated/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-share] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/react-native-share/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-10:41
+MERGED from [:react-native-share] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/react-native-share/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-10:41
+MERGED from [:react-native-shared-element] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/react-native-shared-element/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-shared-element] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/react-native-shared-element/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.61.3] /home/mkhaled/.gradle/caches/transforms-2/files-2.1/5dd01de7201a4e944eaadd6a1142238a/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.61.3] /home/mkhaled/.gradle/caches/transforms-2/files-2.1/5dd01de7201a4e944eaadd6a1142238a/AndroidManifest.xml:7:5-9:41
+MERGED from [org.webkit:android-jsc:r245459] /home/mkhaled/.gradle/caches/transforms-2/files-2.1/5de55d4634511dba04e57ea4db6c64af/AndroidManifest.xml:7:5-9:41
+MERGED from [org.webkit:android-jsc:r245459] /home/mkhaled/.gradle/caches/transforms-2/files-2.1/5de55d4634511dba04e57ea4db6c64af/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-linear-gradient] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/react-native-linear-gradient/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-linear-gradient] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/react-native-linear-gradient/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.appcompat:appcompat:1.0.2] /home/mkhaled/.gradle/caches/transforms-2/files-2.1/3d7007ebd922abcd814408e19a2cdb41/AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.0.2] /home/mkhaled/.gradle/caches/transforms-2/files-2.1/3d7007ebd922abcd814408e19a2cdb41/AndroidManifest.xml:20:5-44
 MERGED from [com.facebook.fresco:fresco:2.0.0] /home/mkhaled/.gradle/caches/transforms-2/files-2.1/92fd0852ae3bdbbeb5d8fcecf5fed5af/AndroidManifest.xml:5:5-7:41
@@ -239,39 +239,39 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] /home/mkhaled/.gradle/cac
 MERGED from [androidx.interpolator:interpolator:1.0.0] /home/mkhaled/.gradle/caches/transforms-2/files-2.1/f052bcaf08657bffea23bca46e880ac7/AndroidManifest.xml:20:5-44
 MERGED from [com.facebook.fresco:fbcore:2.0.0] /home/mkhaled/.gradle/caches/transforms-2/files-2.1/f49273bca8a66ac51d3825cd5b534a6b/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:fbcore:2.0.0] /home/mkhaled/.gradle/caches/transforms-2/files-2.1/f49273bca8a66ac51d3825cd5b534a6b/AndroidManifest.xml:5:5-7:41
-INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/debug/AndroidManifest.xml
-INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/debug/AndroidManifest.xml
+INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/debug/AndroidManifest.xml
+INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/debug/AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml
-		INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/debug/AndroidManifest.xml
+		INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml
+		INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/debug/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml
-		INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/debug/AndroidManifest.xml
+		INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml
+		INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/debug/AndroidManifest.xml
 uses-permission#android.permission.SYSTEM_ALERT_WINDOW
-ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/debug/AndroidManifest.xml:5:5-77
+ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/debug/AndroidManifest.xml:5:5-77
 	android:name
-		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/src/debug/AndroidManifest.xml:5:22-75
+		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/debug/AndroidManifest.xml:5:22-75
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from [:react-native-share] /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/node_modules/react-native-share/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:5-81
+ADDED from [:react-native-share] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/react-native-share/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:5-81
 	android:name
-		ADDED from [:react-native-share] /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/node_modules/react-native-share/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:22-78
+		ADDED from [:react-native-share] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/react-native-share/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:22-78
 provider#cl.json.RNShareFileProvider
-ADDED from [:react-native-share] /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/node_modules/react-native-share/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:9-25:20
+ADDED from [:react-native-share] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/react-native-share/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:9-25:20
 	android:grantUriPermissions
-		ADDED from [:react-native-share] /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/node_modules/react-native-share/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:19:13-47
+		ADDED from [:react-native-share] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/react-native-share/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:19:13-47
 	android:authorities
-		ADDED from [:react-native-share] /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/node_modules/react-native-share/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:13-72
+		ADDED from [:react-native-share] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/react-native-share/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:13-72
 	android:exported
-		ADDED from [:react-native-share] /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/node_modules/react-native-share/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:13-37
+		ADDED from [:react-native-share] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/react-native-share/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:13-37
 	tools:replace
-		ADDED from [:react-native-share] /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/node_modules/react-native-share/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:20:13-48
+		ADDED from [:react-native-share] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/react-native-share/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:20:13-48
 	android:name
-		ADDED from [:react-native-share] /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/node_modules/react-native-share/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:13-55
+		ADDED from [:react-native-share] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/react-native-share/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:13-55
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from [:react-native-share] /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/node_modules/react-native-share/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:21:13-24:52
+ADDED from [:react-native-share] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/react-native-share/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:21:13-24:52
 	android:resource
-		ADDED from [:react-native-share] /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/node_modules/react-native-share/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:23:17-61
+		ADDED from [:react-native-share] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/react-native-share/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:23:17-61
 	tools:replace
-		ADDED from [:react-native-share] /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/node_modules/react-native-share/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:24:17-49
+		ADDED from [:react-native-share] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/react-native-share/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:24:17-49
 	android:name
-		ADDED from [:react-native-share] /media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/node_modules/react-native-share/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:22:17-67
+		ADDED from [:react-native-share] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/react-native-share/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:22:17-67

@@ -63,7 +63,7 @@ export const removeFromFav = movie => async dispatch => {
   
 }
 export const getPopularMovies = () => async dispatch => {
-  fetch(`${baseUrl}/popular?api_key=${apiKey}&language=en-US&page=1`)
+  fetch(`${baseUrl}/movie/popular?api_key=${apiKey}&language=en-US&page=1`)
     .then(res => res.json())
     .then(res => {
       console.log("Movies : ", res);
@@ -79,7 +79,7 @@ export const getPopularMovies = () => async dispatch => {
 };
 
 export const getNowPlayingMovies = () => dispatch => {
-  fetch(`${baseUrl}/now_playing?api_key=${apiKey}&language=en-US&page=1`)
+  fetch(`${baseUrl}/movie/now_playing?api_key=${apiKey}&language=en-US&page=1`)
     .then(res => res.json())
     .then(res => {
       dispatch({

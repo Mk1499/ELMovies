@@ -8,13 +8,19 @@ import store from "./src/store";
 const { width: Width, height: Hight } = Dimensions.get("window");
 
 export default class App extends Component {
+
+  constructor(){
+    super();
+    console.disableYellowBox = true; 
+  }
+
   render() {
     return (
       <Provider store={store}>
         <AppNavigation />
       </Provider>
     );
-  }
+  } 
 }
 
 const styles = StyleSheet.create({

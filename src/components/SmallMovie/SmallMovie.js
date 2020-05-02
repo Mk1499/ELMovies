@@ -8,7 +8,7 @@ export default class SmallMovie extends Component {
         return (
             <View style={styles.smallMovie}>
                 <Image source={{ uri:"https://image.tmdb.org/t/p/original/"+this.props.movie.poster_path}} style={styles.smallMovieImg} />
-                <Text style={styles.smallMovieTitle}>{this.props.movie.title}</Text>
+                <Text style={styles.smallMovieTitle}>{this.props.movie.title || this.props.movie.original_name}</Text>
             </View>
         )
     }

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/media/mkhaled/46229A46229A3B3F/Applications/Web/Portfolio Projects/MoviesApp/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ka/values-ka.xml",
+            "outputFile": "/media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ka/values-ka.xml",
             "map": [
                 {
                     "source": "/home/mkhaled/.gradle/caches/transforms-2/files-2.1/b6ccad933b6b820fac63da371a2df835/res/values-ka/values-ka.xml",

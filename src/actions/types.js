@@ -1,4 +1,8 @@
 export const LOGIN = "LOGIN"; 
 export const SETPOPULAR = "SETPOPULAR"; 
 export const SETPLAYING = "SETPLAYING"; 
-export const SETFAVOURITE = "SETFAVOURITE"
+export const SETFAVOURITE = "SETFAVOURITE"; 
+
+// Series 
+export const SETPOPULARSERIES = "SETPOPULARSERIES"; 
+export const SETPLAYINGSERIES = "SETPLAYINGSERIES"; 

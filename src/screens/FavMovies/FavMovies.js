@@ -2,14 +2,16 @@ import React, { Component } from 'react';
 import { Text, View, TouchableOpacity, StyleSheet, Dimensions, ScrollView, AsyncStorage } from 'react-native';
 import { Item, Left, Content, Container, Header } from 'native-base';
 
-import FavMovie from '../../components/FavMovie/FavMovie'
+import FavMovie from '../../components/FavMovie/FavMovie';
+import {connect} from 'react-redux';
 
 // import External Style
 import commStyle from '../commStyle';
+import {styles} from './style'
 
 const { width: Width, height: Height } = Dimensions.get("window")
 
-export default class SearchRes extends Component {
+ class FavMovies extends Component {
 
     constructor(props) {
         super(props);
@@ -63,7 +65,13 @@ export default class SearchRes extends Component {
                                     <FavMovie movie={movie} />
                                 </TouchableOpacity>
                             )
-                            : null}
+                            : <Content padder contentContainerStyle={styles.noMoviesCont}>
+
+                                    <Text style={{color:'grey'}}>
+                                        Sorry No Favourite Movies Recorded
+                                    </Text>
+                                
+                                </Content>}
                     </ScrollView>
                 </Content>
             </Container>
@@ -72,12 +80,8 @@ export default class SearchRes extends Component {
 }
 
 
-const styles = StyleSheet.create({
+const mapStateToProps = state => ({
 
-    headLine: {
-        fontSize: 24,
-        color: '#333',
-        fontFamily: 'Lato-Light',
-        marginBottom: 0.06 * Height
-    },
 })
+
+export default connect(mapStateToProps,{})(FavMovies);

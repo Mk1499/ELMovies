@@ -1,4 +1,5 @@
 import {StyleSheet , Dimensions} from 'react-native';
+import {mainColor} from '../../configs/global'; 
 
 const { width: Width, height: Height } = Dimensions.get("window")
 
@@ -49,7 +50,7 @@ export const styles = StyleSheet.create({
     bigMovieFavBtn: {
         marginTop: 0.02 * Height,
         flexDirection: 'row',
-        backgroundColor: 'gold',
+        backgroundColor: mainColor,
         padding: 0.03 * Width,
         width: 0.4 * Width,
         borderRadius: 5
