@@ -14,6 +14,8 @@ import {styles} from './style'
 
 import { connect } from "react-redux";
 import SplashScreen from "react-native-splash-screen";
+import Carousel from 'react-native-snap-carousel';
+
 
 import {
   getNowPlayingMovies,
@@ -29,7 +31,6 @@ import commStyle from "../commStyle";
 // Import Components
 import SmallMovie from "../../components/SmallMovie/SmallMovie";
 import BigMovie from "../../components/BigMovie/BigMovie";
-import { async } from "rxjs/internal/scheduler/async";
 
 const { width: Width, height: Height } = Dimensions.get("window");
 
@@ -46,7 +47,7 @@ class Home extends Component {
   }
 
   componentDidMount = async () => {
-    console.log("Props : ", this.props);
+    //console.log("Props : ", this.props);
 
     this.props.getPopularMovies();
     this.props.getNowPlayingMovies();
@@ -67,6 +68,21 @@ class Home extends Component {
   gotoMovieScreen = movie => {
     this.props.navigation.navigate("Movie", { movie });
   };
+
+  renderSmallMovie = (movie, index) => {
+    //console.log("Mov : ", movie);
+    
+    return(
+
+      <TouchableOpacity
+      onPress={() => this.gotoMovieScreen(movie.item)}
+      key={movie.item.id}
+      >
+      <SmallMovie movie={movie.item} />
+    </TouchableOpacity>
+      ) 
+    
+  }
 
 
   render() {
@@ -99,16 +115,14 @@ class Home extends Component {
             </Item>
             {this.props.movies.nowPlayingMovies.length > 0 &&
             this.props.movies.nowPlayingMoviesDone ? (
-              <ScrollView horizontal={true}>
-                {this.props.movies.nowPlayingMovies.map(movie => (
-                  <TouchableOpacity
-                    onPress={() => this.gotoMovieScreen(movie)}
-                    key={movie.id}
-                  >
-                    <SmallMovie movie={movie} />
-                  </TouchableOpacity>
-                ))}
-              </ScrollView>
+              <Carousel
+              ref={(c) => { this._carousel = c; }}
+              data={this.props.movies.nowPlayingMovies}
+              renderItem={this.renderSmallMovie}
+              sliderWidth={0.9 *Width}
+              itemWidth={0.5*Width}
+              layout={'default'}
+            />
             ) : (
               <View style={styles.nowPlayingMovies}>
                 <ActivityIndicator color={mainColor} size="large" />

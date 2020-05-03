@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import {
   Text,
   View,
-  Image,
   ActivityIndicator,
   Dimensions,
   ScrollView,
@@ -14,6 +13,11 @@ import { Item, Icon, Left, Body, Right, Content, CardItem } from "native-base";
 import { styles } from "./styleSeries";
 import { baseUrl, apiKey, mainColor } from "../../configs/global";
 import ActorComp from "../../components/Actor/ActorComp";
+import Image from "react-native-image-progress";
+import * as Progress from "react-native-progress";
+import Carousel from "react-native-snap-carousel";
+
+const { width: Width, height: Height } = Dimensions.get("window");
 
 export default class Series extends Component {
   constructor(props) {
@@ -24,6 +28,8 @@ export default class Series extends Component {
       actors: [],
       noCastAvailable: false
     };
+   // console.log("wlcome in series");
+    
   }
 
   componentDidMount = async () => {
@@ -40,7 +46,7 @@ export default class Series extends Component {
     )
       .then(res => res.json())
       .then(res => {
-        console.log("Actors : ", res.cast);
+      //  console.log("Actors : ", res.cast);
 
         this.setState({
           actors: res.cast ? res.cast.slice(0, 5) : []
@@ -52,7 +58,7 @@ export default class Series extends Component {
         this.setState({
           noCastAvailable: true
         });
-        console.log(err);
+      //  console.log(err);
       });
   };
 
@@ -77,7 +83,7 @@ export default class Series extends Component {
       AsyncStorage.getItem("favSeriesList")
         .then(res => JSON.parse(res))
         .then(async res => {
-          console.log("RES", await this.existInFav(series));
+          //console.log("RES", await this.existInFav(series));
           if (!(await this.existInFav(series))) {
             res.push(series);
             AsyncStorage.setItem("favSeriesList", JSON.stringify(res));
@@ -127,6 +133,10 @@ export default class Series extends Component {
     }
   };
 
+  renderActors = actor => {
+    return <ActorComp actor={actor.item} />;
+  };
+
   render() {
     return (
       <>
@@ -148,11 +158,23 @@ export default class Series extends Component {
               <View style={styles.seriesPosterView}>
                 <Image
                   style={styles.seriesPoster}
-                  source={{
+                  source={
+                    this.state.series.backdrop_path ? 
+                    {
                     uri:
                       "https://image.tmdb.org/t/p/original/" +
                       this.state.series.backdrop_path
+                  }
+                : require('../../../assets/images/movie.png')
+                }
+                  imageStyle={styles.seriesPoster}
+                  indicator={Progress.Bar}
+                  indicatorProps={{
+                    borderWidth: 0,
+                    color: mainColor,
+                    unfilledColor: "rgba(200, 200, 200, 0.2)"
                   }}
+                  resizeMode={this.state.series.backdrop_path ? 'cover' : 'contain'}
                 />
               </View>
             </Left>
@@ -215,12 +237,17 @@ export default class Series extends Component {
                 <Text style={styles.overview}>
                   Sorry But there is No Available Cast For This Series
                 </Text>
-              ) : this.state.actors.length ? (
-                <ScrollView horizontal={true}>
-                  {this.state.actors.map(actor => (
-                    <ActorComp actor={actor} />
-                  ))}
-                </ScrollView>
+              ) : this.state.actors.length > 0 ? (
+                <Carousel
+                  ref={c => {
+                    this._carousel = c;
+                  }}
+                  data={this.state.actors}
+                  renderItem={this.renderActors}
+                  sliderWidth={0.9 * Width}
+                  itemWidth={0.5 * Width}
+                  layout={"default"}
+                />
               ) : (
                 <ActivityIndicator size="large" color={mainColor} />
               )}

@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
-import { Text, View, Image, TouchableOpacity, Dimensions } from 'react-native';
+import { Text, View, Dimensions } from 'react-native';
 import { Icon } from 'native-base';
 import {mainColor} from '../../configs/global';
 import { styles } from './styles';
 const { width: Width, height: Height } = Dimensions.get("window")
+import Image from "react-native-image-progress";
+import * as Progress from 'react-native-progress'; 
 
 export default class BigMovie extends Component {
 
@@ -22,7 +24,16 @@ export default class BigMovie extends Component {
     render() {
         return (
             <View style={styles.bigMovie}>
-                <Image source={{ uri: "https://image.tmdb.org/t/p/original/"+this.props.movie.poster_path || "https://loading.io/spinners/double-ring/lg.double-ring-spinner.gif"}} style={styles.bigMovieImg} />
+                <Image source={{ uri: "https://image.tmdb.org/t/p/original/"+this.props.movie.poster_path || "https://loading.io/spinners/double-ring/lg.double-ring-spinner.gif"}} 
+                style={styles.bigMovieImg}
+                imageStyle={styles.bigMovieImg}
+                indicator={Progress.Bar}
+                indicatorProps={{
+                    borderWidth: 0,
+                    color: mainColor,
+                    unfilledColor: "rgba(200, 200, 200, 0.2)"
+                  }}
+                />
                 <View style={styles.bigMovieData}>
                     <Text style={styles.bigMovieTitle}>{this.props.movie.title|| this.props.movie.original_name}</Text>
                     <View style={styles.bigMovieViews}>

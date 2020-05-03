@@ -10,7 +10,7 @@ import {
   TouchableWithoutFeedback
 } from "react-native";
 import { Item, Left, Content, Container, Header } from "native-base";
-import {mainColor} from '../../configs/global';
+import { mainColor } from "../../configs/global";
 import BigMovie from "../../components/BigMovie/BigMovie";
 import { apiKey, baseUrl } from "../../configs/global";
 import { connect } from "react-redux";
@@ -23,24 +23,45 @@ class SearchRes extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movieName: this.props.navigation.getParam("movieName"),
-      moviesList: [],
-      searchDone: false
+      mediaName: "",
+      mediaList: [],
+      searchDone: false,
+      movieTvSW: "movie"
     };
-    console.log(
-      `${baseUrl}?api_key=${apiKey}&language=en-US&page=1&include_adult=false&query=${this.state.movieName}`
-    );
   }
 
   componentDidMount() {
+    if (this.props.navigation.getParam("movieName")) {
+      this.setState(
+        {
+          mediaName: this.props.navigation.getParam("movieName"),
+          movieTvSW: "movie"
+        },
+        () => this.getMedia()
+      );
+    } else {
+      this.setState(
+        {
+          mediaName: this.props.navigation.getParam("seriesName"),
+          movieTvSW: "tv"
+        },
+        () => this.getMedia()
+      );
+    }
+  }
+
+  getMedia = async () => {
+   // console.log(
+    //   `${baseUrl}/search/${this.state.movieTvSW}?api_key=${apiKey}&language=en-US&page=1&include_adult=false&query=${this.state.mediaName}`
+    // );
     fetch(
-      `${baseUrl}/movie?api_key=${apiKey}&language=en-US&page=1&include_adult=false&query=${this.state.movieName}`
+      `${baseUrl}/search/${this.state.movieTvSW}?api_key=${apiKey}&language=en-US&page=1&include_adult=false&query=${this.state.mediaName}`
     )
       .then(res => res.json())
       .then(res => {
         if (res.results && res.results.length > 0)
           this.setState({
-            moviesList: res.results
+            mediaList: res.results
           });
         else
           this.setState({
@@ -48,11 +69,14 @@ class SearchRes extends Component {
           });
       })
       .catch(err => console.log("Err : ", err));
-  }
-
+  };
   // Movie Pressed
-  gotoMovieScreen = movie => {
-    this.props.navigation.navigate("Movie", { movie });
+  gotoMovieScreen = media => {
+    //console.log("Media : ", media);
+    
+    if (this.state.movieTvSW == "movie")
+      this.props.navigation.navigate("Movie", { movie : media });
+    else this.props.navigation.navigate("Series", { series : media });
   };
 
   //check if movies in Fav List
@@ -72,7 +96,7 @@ class SearchRes extends Component {
       AsyncStorage.getItem("favMoviesList")
         .then(res => JSON.parse(res))
         .then(async res => {
-          console.log("RES", await this.existInFav(movie));
+        //  console.log("RES", await this.existInFav(movie));
           if (!(await this.existInFav(movie))) {
             res.push(movie);
             AsyncStorage.setItem("favMoviesList", JSON.stringify(res));
@@ -95,27 +119,39 @@ class SearchRes extends Component {
           <Item style={{ borderBottomWidth: 0 }}>
             <Left style={styles.rowView}>
               <Text style={styles.headLine}>Search Results for :</Text>
-              <Text style={[styles.headLine, {color: mainColor,fontWeight:'bold'}]}>
+              <Text
+                style={[
+                  styles.headLine,
+                  { color: mainColor, fontWeight: "bold" }
+                ]}
+              >
                 {" "}
-                {this.state.movieName}
+                {this.state.mediaName}
               </Text>
             </Left>
           </Item>
-          {this.state.moviesList.length > 0 && !this.state.searchDone ? (
-            this.state.moviesList.map(movie => (
-              <TouchableWithoutFeedback
+          {this.state.mediaList.length > 0 && !this.state.searchDone ? (
+            this.state.mediaList.map(movie => (
+              <TouchableOpacity
                 key={movie.id}
                 onPress={() => this.gotoMovieScreen(movie)}
               >
                 <BigMovie movie={movie} addToFav={() => this.addToFav(movie)} />
-              </TouchableWithoutFeedback>
+              </TouchableOpacity>
             ))
           ) : this.state.searchDone ? (
             <View style={[styles.rowView, styles.notFound]}>
-              <Text style={styles.notFoundLine}>Sorry no available movies for</Text>
-              <Text style={[styles.notFoundLine,{color:mainColor,fontWeight:'bold'}]}>
+              <Text style={styles.notFoundLine}>
+                Sorry no available {this.state.movieTvSW} for
+              </Text>
+              <Text
+                style={[
+                  styles.notFoundLine,
+                  { color: mainColor, fontWeight: "bold" }
+                ]}
+              >
                 {" "}
-                {this.state.movieName}
+                {this.state.mediaName}
               </Text>
             </View>
           ) : (

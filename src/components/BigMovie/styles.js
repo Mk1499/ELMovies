@@ -13,11 +13,13 @@ export const styles = StyleSheet.create({
         flexDirection: "column"
     },
     bigMovieTitle: {
-        fontSize: 20,
+        fontSize: 0.05 *Width,
         color: '#333',
         fontFamily: 'Lato-Light',
         fontWeight: '300',
-        marginVertical: 0.015 * Height
+        marginVertical: 0.015 * Height, 
+        width:0.4 * Width, 
+        fontWeight:'500'
 
     },
     bigMovieViews:{

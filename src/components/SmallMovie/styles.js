@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
     },
     smallMovieImg: {
         width: 0.4 * Width,
-        height: 0.3 * Height,
+        height: 0.4 * Height,
         borderRadius: 20,
         marginBottom: 0.03 * Height
     },
@@ -20,4 +20,7 @@ export const styles = StyleSheet.create({
         fontSize: 18,
         fontFamily: 'Lato-Light'
     },
+    indecator:{
+   
+      }
 })

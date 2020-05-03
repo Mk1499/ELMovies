@@ -14,6 +14,7 @@ import {styles} from './style'
 
 import { connect } from "react-redux";
 import SplashScreen from "react-native-splash-screen";
+import Carousel from 'react-native-snap-carousel';
 
 import {
   getNowPlayingSeries,
@@ -45,7 +46,7 @@ class TV extends Component {
   }
 
   componentDidMount = async () => {
-    console.log("Props : ", this.props);
+   // console.log("Props : ", this.props);
 
     this.props.getPopularSeries();
     this.props.getNowPlayingSeries();
@@ -56,8 +57,8 @@ class TV extends Component {
   // Search Button Pressed
   gotoSearchRes = () => {
     if (this.state.searchSeries)
-      this.props.navigation.navigate("SearchRes", {
-        SeriesName: this.state.searchSeries
+      this.props.navigation.navigate("SearchSeriesRes", {
+        seriesName: this.state.searchSeries
       });
     else alert("Please Write Series name");
   };
@@ -66,7 +67,20 @@ class TV extends Component {
   gotoSeriesScreen = series => {
     this.props.navigation.navigate("Series", { series });
   };
+  renderSmallSeries = (series, index) => {
+    // console.log("Mov : ", series);
+    
+    return(
 
+      <TouchableOpacity
+      onPress={() => this.gotoSeriesScreen(series.item)}
+      key={series.item.id}
+      >
+      <SmallMovie movie={series.item} />
+    </TouchableOpacity>
+      ) 
+    
+  }
 
   render() {
     return (
@@ -98,16 +112,14 @@ class TV extends Component {
             </Item>
             {this.props.series.nowPlayingSeries.length > 0 &&
             this.props.series.nowPlayingSeriesDone ? (
-              <ScrollView horizontal={true}>
-                {this.props.series.nowPlayingSeries.map(series => (
-                  <TouchableOpacity
-                    onPress={() => this.gotoSeriesScreen(series)}
-                    key={series.id}
-                  >
-                    <SmallMovie movie={series} />
-                  </TouchableOpacity>
-                ))}
-              </ScrollView>
+              <Carousel
+              ref={(c) => { this._carousel = c; }}
+              data={this.props.series.nowPlayingSeries}
+              renderItem={this.renderSmallSeries}
+              sliderWidth={0.9 *Width}
+              itemWidth={0.5*Width}
+              layout={'default'}
+            />
             ) : (
               <View style={styles.nowPlayingSeries}>
                 <ActivityIndicator color={mainColor} size="large" />

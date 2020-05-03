@@ -68,7 +68,19 @@ const TVStack = createStackNavigator({
       headerPressColorAndroid: mainColor,
       headerTintColor: mainColor,
     })
-  }
+  }, 
+  SearchSeriesRes: {
+    screen: SearchRes,
+    navigationOptions: () => ({
+      headerTitle: "",
+      headerStyle: {
+        backgroundColor: '#fff',
+      },
+      headerPressColorAndroid: main,
+      headerTintColor: mainColor,
+      headerTransparent: true,
+    })
+  },
  
 })
 

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import {
   Text,
   View,
-  Image,
   ActivityIndicator,
   Dimensions,
   ScrollView,
@@ -13,7 +12,11 @@ import {
 import { Item, Icon, Left, Body, Right, Content, CardItem } from "native-base";
 import { styles } from "./style";
 import { baseUrl, apiKey, mainColor } from "../../configs/global";
-import ActorComp from '../../components/Actor/ActorComp';
+import ActorComp from "../../components/Actor/ActorComp";
+import Image from "react-native-image-progress";
+import * as Progress from "react-native-progress";
+import Carousel from "react-native-snap-carousel";
+const { width: Width, height: Height } = Dimensions.get("window");
 
 export default class Movie extends Component {
   constructor(props) {
@@ -21,8 +24,8 @@ export default class Movie extends Component {
     this.state = {
       movie: this.props.navigation.getParam("movie"),
       movieInFav: false,
-      actors: [], 
-      noCastAvailable : false 
+      actors: [],
+      noCastAvailable: false
     };
   }
 
@@ -40,24 +43,28 @@ export default class Movie extends Component {
     )
       .then(res => res.json())
       .then(res => {
-          console.log("Actors : ", res.cast);
-          
+       // console.log("Actors : ", res.cast);
+
         this.setState({
-          actors: res.cast ?  res.cast.slice(0, 5) : [], 
+          actors: res.cast ? res.cast.slice(0, 5) : []
         });
 
         return res.cast.slice(0, 4);
       })
       .catch(err => {
         this.setState({
-            noCastAvailable:true
-        })
-        console.log(err)
+          noCastAvailable: true
         });
+      //  console.log(err);
+      });
   };
 
   back = () => {
     this.props.navigation.goBack();
+  };
+
+  renderActors = actor => {
+    return <ActorComp actor={actor.item} />;
   };
 
   //check if movies in Fav List
@@ -77,7 +84,7 @@ export default class Movie extends Component {
       AsyncStorage.getItem("favMoviesList")
         .then(res => JSON.parse(res))
         .then(async res => {
-          console.log("RES", await this.existInFav(movie));
+          //console.log("RES", await this.existInFav(movie));
           if (!(await this.existInFav(movie))) {
             res.push(movie);
             AsyncStorage.setItem("favMoviesList", JSON.stringify(res));
@@ -147,11 +154,23 @@ export default class Movie extends Component {
               <View style={styles.moviePosterView}>
                 <Image
                   style={styles.moviePoster}
-                  source={{
+                  source={
+                    this.state.movie.backdrop_path ? 
+                    {
                     uri:
                       "https://image.tmdb.org/t/p/original/" +
                       this.state.movie.backdrop_path
+                  }
+                : require('../../../assets/images/movie.png')
+                }
+                  imageStyle={styles.moviePoster}
+                  indicator={Progress.Bar}
+                  indicatorProps={{
+                    borderWidth: 0,
+                    color: mainColor,
+                    unfilledColor: "rgba(200, 200, 200, 0.2)"
                   }}
+                  resizeMode={this.state.movie.backdrop_path ? 'cover' : 'contain'}
                 />
               </View>
             </Left>
@@ -203,23 +222,27 @@ export default class Movie extends Component {
               <Text style={styles.headLine}>Overview</Text>
               <Text style={styles.overview}>{this.state.movie.overview}</Text>
             </View>
-            
+
             <View>
               <Text style={styles.headLine}>Cast</Text>
-            {this.state.noCastAvailable ? 
-              <Text style={styles.overview}>Sorry But there is No Available Cast For This Movie</Text>
-            
-            : this.state.actors.length ? 
-              <ScrollView horizontal={true}> 
-              {this.state.actors.map((actor) => 
-                <ActorComp 
-                actor = {actor}
+              {this.state.noCastAvailable ? (
+                <Text style={styles.overview}>
+                  Sorry But there is No Available Cast For This Movie
+                </Text>
+              ) : this.state.actors.length ? (
+                <Carousel
+                  ref={c => {
+                    this._carousel = c;
+                  }}
+                  data={this.state.actors}
+                  renderItem={this.renderActors}
+                  sliderWidth={0.9 * Width}
+                  itemWidth={0.5 * Width}
+                  layout={"default"}
                 />
-                )}
-              </ScrollView>
-            :
-            <ActivityIndicator size="large" color={mainColor} />
-            }
+              ) : (
+                <ActivityIndicator size="large" color={mainColor} />
+              )}
             </View>
           </Content>
         </ScrollView>

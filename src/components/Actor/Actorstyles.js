@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
     },
     smallActorImg: {
         width: 0.4 * Width,
-        height: 0.3 * Height,
+        height: 0.4 * Height,
         borderRadius: 20,
         marginBottom: 0.03 * Height
     },

@@ -38,7 +38,7 @@ export const addToFav =  movie => async dispatch =>  {
     AsyncStorage.getItem("favSeriesList")
       .then(res => JSON.parse(res))
       .then(async res => {
-        console.log("RES", await existInFav(movie));
+        //console.log("RES", await existInFav(movie));
         if (!(await existInFav(movie))) {
           res.push(movie);
           AsyncStorage.setItem("favSeriesList", JSON.stringify(res));
@@ -67,7 +67,7 @@ export const getPopularSeries = () => async dispatch => {
   fetch(`${baseUrl}/tv/popular?api_key=${apiKey}&language=en-US&page=1`)
     .then(res => res.json())
     .then(res => {
-      console.log("Movies : ", res);
+      //console.log("Movies : ", res);
 
       dispatch({
         type: SETPOPULARSERIES,
@@ -75,7 +75,7 @@ export const getPopularSeries = () => async dispatch => {
       });
     })
     .catch(err => {
-      console.log("popular movies Err : ", err);
+     // console.log("popular movies Err : ", err);
     });
 };
 

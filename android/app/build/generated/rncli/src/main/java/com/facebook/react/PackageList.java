@@ -14,12 +14,16 @@ import java.util.ArrayList;
 import com.elmovie.BuildConfig;
 import com.elmovie.R;
 
+// @react-native-community/art
+import com.reactnativecommunity.art.ARTPackage;
 // react-native-gesture-handler
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 // react-native-linear-gradient
 import com.BV.LinearGradient.LinearGradientPackage;
 // react-native-reanimated
 import com.swmansion.reanimated.ReanimatedPackage;
+// react-native-screens
+import com.swmansion.rnscreens.RNScreensPackage;
 // react-native-share
 import cl.json.RNSharePackage;
 // react-native-shared-element
@@ -71,9 +75,11 @@ public class PackageList {
   public ArrayList<ReactPackage> getPackages() {
     return new ArrayList<>(Arrays.<ReactPackage>asList(
       new MainReactPackage(mConfig),
+      new ARTPackage(),
       new RNGestureHandlerPackage(),
       new LinearGradientPackage(),
       new ReanimatedPackage(),
+      new RNScreensPackage(),
       new RNSharePackage(),
       new RNSharedElementPackage(),
       new SplashScreenReactPackage()
