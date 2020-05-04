@@ -20,6 +20,19 @@ import { styles } from "./style";
 import commStyle from "../commStyle";
 
 class SearchRes extends Component {
+  static navigationOptions = ({ navigation }) => {
+    return {
+      headerTitle: navigation.getParam('Title', 'Default Title'),
+      //Default Title of ActionBar
+      headerStyle: {
+        backgroundColor: navigation.getParam('BackgroundColor', '#ED2525'),
+        //Background color of ActionBar
+      },
+      headerTintColor: navigation.getParam('HeaderTintColor', '#fff'),
+      //Text color of ActionBar
+    };
+  };
+  
   constructor(props) {
     super(props);
     this.state = {
@@ -28,8 +41,9 @@ class SearchRes extends Component {
       searchDone: false,
       movieTvSW: "movie"
     };
-  }
 
+    // this.props.navigation.setParam({headerTitle:"jcdnsjncd"})
+  }
   componentDidMount() {
     if (this.props.navigation.getParam("movieName")) {
       this.setState(
