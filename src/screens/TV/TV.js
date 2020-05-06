@@ -10,7 +10,7 @@ import {
   AsyncStorage,
 } from "react-native";
 import { Container, Item, Form, Input, Label, Icon, Left } from "native-base";
-import {styles} from './style'
+import {styles} from '../Home/style'
 
 import { connect } from "react-redux";
 import SplashScreen from "react-native-splash-screen";

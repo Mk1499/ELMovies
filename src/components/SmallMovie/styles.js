@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
         marginHorizontal: 0.05 * Width
     },
     smallMovieImg: {
-        width: 0.4 * Width,
+        width: 0.45 * Width,
         height: 0.4 * Height,
         borderRadius: 20,
         marginBottom: 0.03 * Height

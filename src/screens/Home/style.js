@@ -1,10 +1,9 @@
-import { StyleSheet, Dimensions } from "react-native";
+import { StyleSheet, Dimensions , Platform } from "react-native";
 const { width: Width, height: Height } = Dimensions.get("window");
 import {mainColor} from '../../configs/global'
 
 export const styles = StyleSheet.create({
   searchForm: {
-  
     shadowColor: mainColor,
     shadowOffset: {
       width: 0,
@@ -15,7 +14,10 @@ export const styles = StyleSheet.create({
     
     elevation: 6,
     backgroundColor:"#eee",
-    borderRadius:20
+    borderRadius:20,
+    paddingRight:0.05 * Width, 
+    borderColor:mainColor,
+    borderWidth:2
   },
   label: {
     color: "grey",
@@ -27,16 +29,16 @@ export const styles = StyleSheet.create({
     zIndex:50,
     width: 0.9*Width,
     marginHorizontal:0.05 *Width,
-    top:0.03*Height
+    top: Platform.OS === "ios" ? 0.1*Height : 0.04*Height
   },
   searchInput: {
-    height: 0.11 * Height,
+    height: 0.1 * Height,
     fontSize: 0.05*Width,
     fontFamily: "Lato-Light",
     color: "#333",
   },
   scrollVeiwCont:{
-    marginTop:0.15*Height
+    marginTop:  Platform.OS === "ios" ?  0.25*Height : 0.15*Height
   },
   headLine: {
     fontSize: 0.07 * Width,
@@ -46,7 +48,8 @@ export const styles = StyleSheet.create({
   },
   section: {
     paddingHorizontal: 0.05 * Width,
-    marginVertical: 0.05 * Width
+    marginVertical: 0.05 * Width,
+    minHeight:0.4 * Height
   },
   nowPlayingMovies: {
     height: 0.3 * Height,
