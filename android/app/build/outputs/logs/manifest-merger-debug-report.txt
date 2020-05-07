@@ -120,24 +120,6 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/mkhal
 	android:name
 		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:7:7-38
 		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:7:7-38
-activity#com.elmovie.SplashActivity
-ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:14:6-22:20
-	android:label
-		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:17:11-43
-	android:theme
-		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:16:11-45
-	android:name
-		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:15:11-41
-intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:18:11-21:27
-action#android.intent.action.MAIN
-ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:19:15-67
-	android:name
-		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:19:23-64
-category#android.intent.category.LAUNCHER
-ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:20:15-75
-	android:name
-		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:20:25-72
 activity#com.elmovie.MainActivity
 ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:23:7-32:18
 	android:label
@@ -148,6 +130,16 @@ ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/Movie
 		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:26:9-79
 	android:name
 		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:24:9-37
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:28:9-31:25
+action#android.intent.action.MAIN
+ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:29:13-65
+	android:name
+		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:29:21-62
+category#android.intent.category.LAUNCHER
+ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:30:13-73
+	android:name
+		ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:30:23-70
 activity#com.facebook.react.devsupport.DevSettingsActivity
 ADDED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:33:7-84
 	android:name

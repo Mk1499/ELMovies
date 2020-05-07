@@ -75,6 +75,7 @@ class TV extends Component {
       <TouchableOpacity
       onPress={() => this.gotoSeriesScreen(series.item)}
       key={series.item.id}
+      activeOpacity={1}
       >
       <SmallMovie movie={series.item} />
     </TouchableOpacity>
@@ -140,6 +141,7 @@ class TV extends Component {
                 <TouchableOpacity
                   onPress={() => this.gotoSeriesScreen(series)}
                   key={series.id}
+                  activeOpacity={1}
                 >
                   <BigMovie
                     movie={series}

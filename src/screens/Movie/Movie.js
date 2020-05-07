@@ -7,7 +7,7 @@ import {
   ScrollView,
   TouchableOpacity,
   Share,
-  AsyncStorage
+  AsyncStorage,
 } from "react-native";
 import { Item, Icon, Left, Body, Right, Content, CardItem } from "native-base";
 import { styles } from "./style";
@@ -43,7 +43,7 @@ export default class Movie extends Component {
     )
       .then(res => res.json())
       .then(res => {
-       // console.log("Actors : ", res.cast);
+        // console.log("Actors : ", res.cast);
 
         this.setState({
           actors: res.cast ? res.cast.slice(0, 5) : []
@@ -55,7 +55,7 @@ export default class Movie extends Component {
         this.setState({
           noCastAvailable: true
         });
-      //  console.log(err);
+        //  console.log(err);
       });
   };
 
@@ -64,7 +64,11 @@ export default class Movie extends Component {
   };
 
   renderActors = actor => {
-    return <ActorComp actor={actor.item} />;
+    return (
+      <TouchableOpacity onPress={()=>{this.gotToActorProfile(actor.item)}} activeOpacity={1} >
+        <ActorComp actor={actor.item} />
+      </TouchableOpacity>
+    );
   };
 
   //check if movies in Fav List
@@ -133,6 +137,11 @@ export default class Movie extends Component {
     }
   };
 
+  gotToActorProfile = (actor) => {
+    this.props.navigation.navigate("ActorProfile",{actor})
+  }
+
+
   render() {
     return (
       <>
@@ -154,15 +163,13 @@ export default class Movie extends Component {
               <View style={styles.moviePosterView}>
                 <Image
                   style={styles.moviePoster}
-                  source={
-                    this.state.movie.backdrop_path ? 
-                    {
-                    uri:
-                      "https://image.tmdb.org/t/p/original/" +
-                      this.state.movie.backdrop_path
-                  }
-                : require('../../../assets/images/movie.png')
-                }
+                  source={{
+                    uri: this.state.movie.backdrop_path
+                      ? "https://image.tmdb.org/t/p/original/" +
+                        this.state.movie.backdrop_path
+                      : "https://image.tmdb.org/t/p/original/" +
+                        this.state.movie.poster_path
+                  }}
                   imageStyle={styles.moviePoster}
                   indicator={Progress.Bar}
                   indicatorProps={{
@@ -170,7 +177,9 @@ export default class Movie extends Component {
                     color: mainColor,
                     unfilledColor: "rgba(200, 200, 200, 0.2)"
                   }}
-                  resizeMode={this.state.movie.backdrop_path ? 'cover' : 'contain'}
+                  resizeMode={
+                    this.state.movie.backdrop_path ? "cover" : "contain"
+                  }
                 />
               </View>
             </Left>

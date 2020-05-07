@@ -77,6 +77,7 @@ class Home extends Component {
       <TouchableOpacity
       onPress={() => this.gotoMovieScreen(movie.item)}
       key={movie.item.id}
+      activeOpacity={1}
       >
       <SmallMovie movie={movie.item} />
     </TouchableOpacity>
@@ -143,6 +144,7 @@ class Home extends Component {
                 <TouchableOpacity
                   onPress={() => this.gotoMovieScreen(movie)}
                   key={movie.id}
+                  activeOpacity={1}
                 >
                   <BigMovie
                     movie={movie}

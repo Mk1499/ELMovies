@@ -71,7 +71,7 @@ export const getPopularSeries = () => async dispatch => {
 
       dispatch({
         type: SETPOPULARSERIES,
-        payload: res.results
+        payload: res.results.slice(0,5)
       });
     })
     .catch(err => {
@@ -85,7 +85,7 @@ export const getNowPlayingSeries = () => dispatch => {
     .then(res => {
       dispatch({
         type: SETPLAYINGSERIES,
-        payload: res.results
+        payload: res.results.slice(0,5)
       });
     });
 };

@@ -159,13 +159,13 @@ export default class Series extends Component {
                 <Image
                   style={styles.seriesPoster}
                   source={
-                    this.state.series.backdrop_path ? 
                     {
-                    uri:
-                      "https://image.tmdb.org/t/p/original/" +
-                      this.state.series.backdrop_path
-                  }
-                : require('../../../assets/images/movie.png')
+                      uri: this.state.series.backdrop_path
+                        ? "https://image.tmdb.org/t/p/original/" +
+                          this.state.series.backdrop_path
+                        : "https://image.tmdb.org/t/p/original/" +
+                          this.state.series.poster_path
+                    }
                 }
                   imageStyle={styles.seriesPoster}
                   indicator={Progress.Bar}

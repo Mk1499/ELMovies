@@ -32,7 +32,8 @@ export const styles = StyleSheet.create({
   seriesPoster: {
     width: 0.45 * Width,
     height: 0.35 * Height,
-    borderRadius: 15
+    borderRadius: 15,
+    backgroundColor: "#fff"
   },
   favIcon: {
     marginRight: 0.03 * Width,
