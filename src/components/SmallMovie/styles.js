@@ -26,7 +26,10 @@ export const styles = StyleSheet.create({
     color: "#333",
     alignSelf: "center",
     fontSize: 18,
-    fontFamily: "Lato-Light"
+    fontFamily: "Lato-Light",
+    maxWidth:0.3*Width,
+    textAlign:'center'
+
   },
   indecator: {}
 });

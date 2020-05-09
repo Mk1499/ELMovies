@@ -7,7 +7,7 @@ import {
   ScrollView,
   TouchableOpacity,
   Share,
-  AsyncStorage,
+  AsyncStorage
 } from "react-native";
 import { Item, Icon, Left, Body, Right, Content, CardItem } from "native-base";
 import { styles } from "./style";
@@ -65,7 +65,12 @@ export default class Movie extends Component {
 
   renderActors = actor => {
     return (
-      <TouchableOpacity onPress={()=>{this.gotToActorProfile(actor.item)}} activeOpacity={1} >
+      <TouchableOpacity
+        onPress={() => {
+          this.gotToActorProfile(actor.item);
+        }}
+        activeOpacity={1}
+      >
         <ActorComp actor={actor.item} />
       </TouchableOpacity>
     );
@@ -137,10 +142,9 @@ export default class Movie extends Component {
     }
   };
 
-  gotToActorProfile = (actor) => {
-    this.props.navigation.navigate("ActorProfile",{actor})
-  }
-
+  gotToActorProfile = actor => {
+    this.props.navigation.replace("ActorProfile", { actor });
+  };
 
   render() {
     return (
@@ -148,11 +152,15 @@ export default class Movie extends Component {
         <ScrollView style={styles.contianer}>
           <View>
             <Image
-              source={{
-                uri:
-                  "https://image.tmdb.org/t/p/original/" +
-                  this.state.movie.poster_path
-              }}
+              source={
+                this.state.movie.poster_path
+                  ? {
+                      uri:
+                        "https://image.tmdb.org/t/p/original/" +
+                        this.state.movie.poster_path
+                    }
+                  : require("../../../assets/images/defaultMovie.jpg")
+              }
               style={styles.coverImg}
               resizeMode="stretch"
             />
@@ -163,13 +171,18 @@ export default class Movie extends Component {
               <View style={styles.moviePosterView}>
                 <Image
                   style={styles.moviePoster}
-                  source={{
-                    uri: this.state.movie.backdrop_path
-                      ? "https://image.tmdb.org/t/p/original/" +
-                        this.state.movie.backdrop_path
-                      : "https://image.tmdb.org/t/p/original/" +
-                        this.state.movie.poster_path
-                  }}
+                  source={
+                    this.state.movie.backdrop_path ||
+                    this.state.movie.poster_path
+                      ? {
+                          uri: this.state.movie.backdrop_path
+                            ? "https://image.tmdb.org/t/p/original/" +
+                              this.state.movie.backdrop_path
+                            : "https://image.tmdb.org/t/p/original/" +
+                              this.state.movie.poster_path
+                        }
+                      : require("../../../assets/images/defaultMovie.jpg")
+                  }
                   imageStyle={styles.moviePoster}
                   indicator={Progress.Bar}
                   indicatorProps={{

@@ -133,8 +133,16 @@ export default class Series extends Component {
     }
   };
 
+  gotToActorProfile = (actor) => {
+    this.props.navigation.replace("ActorProfile",{actor})
+  }
+
   renderActors = actor => {
-    return <ActorComp actor={actor.item} />;
+    return (
+      <TouchableOpacity onPress={()=>{this.gotToActorProfile(actor.item)}} activeOpacity={1} >
+        <ActorComp actor={actor.item} />
+      </TouchableOpacity>
+    );
   };
 
   render() {
@@ -159,6 +167,7 @@ export default class Series extends Component {
                 <Image
                   style={styles.seriesPoster}
                   source={
+                    this.state.series.backdrop_path || this.state.series.poster_path ?  
                     {
                       uri: this.state.series.backdrop_path
                         ? "https://image.tmdb.org/t/p/original/" +
@@ -166,6 +175,7 @@ export default class Series extends Component {
                         : "https://image.tmdb.org/t/p/original/" +
                           this.state.series.poster_path
                     }
+                    : require("../../../assets/images/defaultMovie.jpg")
                 }
                   imageStyle={styles.seriesPoster}
                   indicator={Progress.Bar}
@@ -194,11 +204,11 @@ export default class Series extends Component {
 
           <Content padder>
             <Text style={styles.seriesTitle}>
-              {this.state.series.original_name}{" "}
+              {this.state.series.original_name || this.state.series.name }
             </Text>
             <Item style={{ borderBottomWidth: 0 }}>
               <Icon name="calendar" />
-              <Text>{this.state.series.first_air_date}</Text>
+              <Text>{this.state.series.first_air_date || "N/A"}</Text>
             </Item>
             <Item style={styles.seriesData}>
               <View style={styles.iconCont}>
@@ -210,7 +220,7 @@ export default class Series extends Component {
               <View style={styles.iconCont}>
                 <Icon name="eye" style={[styles.Icon, { color: "#0e95ad" }]} />
                 <Text style={{ color: "#0e95ad", fontWeight: "bold" }}>
-                  {this.state.series.popularity}
+                  {this.state.series.popularity||"N/A"}
                 </Text>
               </View>
               <View style={styles.iconCont}>
@@ -228,7 +238,7 @@ export default class Series extends Component {
             </Item>
             <View>
               <Text style={styles.headLine}>Overview</Text>
-              <Text style={styles.overview}>{this.state.series.overview}</Text>
+              <Text style={styles.overview}>{this.state.series.overview || `Sorry there no averview available for ${this.state.series.original_name}`}</Text>
             </View>
 
             <View>

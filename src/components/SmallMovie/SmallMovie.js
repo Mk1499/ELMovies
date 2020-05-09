@@ -10,11 +10,15 @@ export default class SmallMovie extends Component {
     return (
       <View style={styles.smallMovie}>
         <Image
-          source={{
+          source={
+            this.props.movie.poster_path?
+            {
             uri:
               "https://image.tmdb.org/t/p/original/" +
               this.props.movie.poster_path
-          }}
+          }
+          : require('../../../assets/images/defaultMovie.jpg')
+        }
           style={styles.smallMovieImg}
           imageStyle={styles.smallMovieImg}
           indicator={Progress.Bar}

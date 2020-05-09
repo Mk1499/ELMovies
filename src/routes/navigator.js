@@ -5,6 +5,8 @@ import { createBottomTabNavigator } from "react-navigation-tabs";
 import { createStackNavigator } from "react-navigation-stack";
 import { mainColor } from "../configs/global";
 
+import {createSharedElementStackNavigator} from 'react-navigation-shared-element'; 
+
 import Home from "../screens/Home/Home"; // Movie Home
 import FavMovies from "../screens/FavMovies/FavMovies";
 import SearchRes from "../screens/SearchRes/SearchRes";
@@ -55,7 +57,16 @@ const MovieStack = createStackNavigator({
       headerPressColorAndroid: mainColor,
       headerTintColor: mainColor
     })
-  }
+  },
+  Series: {
+    screen: Series,
+    navigationOptions: () => ({
+      headerTitle: "",
+      headerTransparent: true,
+      headerPressColorAndroid: mainColor,
+      headerTintColor: mainColor
+    })
+  },
 });
 
 const TVStack = createStackNavigator({
@@ -95,7 +106,16 @@ const TVStack = createStackNavigator({
       headerPressColorAndroid: mainColor,
       headerTintColor: mainColor
     })
-  }
+  },
+  Movie: {
+    screen: Movie,
+    navigationOptions: () => ({
+      headerTitle: "",
+      headerTransparent: true,
+      headerPressColorAndroid: mainColor,
+      headerTintColor: mainColor
+    })
+  },
 });
 
 const FavStack = createStackNavigator({
