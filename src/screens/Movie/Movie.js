@@ -165,9 +165,9 @@ export default class Movie extends Component {
               resizeMode="stretch"
             />
           </View>
-
-          <View style={{ flexDirection: "row" }}>
-            <Left>
+          <View style={styles.movieDataView}>
+            <View style={{ flexDirection: "row" }}>
+              {/* <Left>
               <View style={styles.moviePosterView}>
                 <Image
                   style={styles.moviePoster}
@@ -195,78 +195,86 @@ export default class Movie extends Component {
                   }
                 />
               </View>
-            </Left>
-            <Right>
-              <TouchableOpacity onPress={() => this.addToFav(this.state.movie)}>
-                <Icon
-                  name={this.state.movieInFav ? "heart" : "heart-empty"}
-                  style={[styles.favIcon]}
-                />
-              </TouchableOpacity>
-            </Right>
-          </View>
-
-          {/*Data */}
-
-          <Content padder>
-            <Text style={styles.movieTitle}>{this.state.movie.title} </Text>
-            <Item style={{ borderBottomWidth: 0 }}>
-              <Icon name="calendar" />
-              <Text>{this.state.movie.release_date}</Text>
-            </Item>
-            <Item style={styles.movieData}>
-              <View style={styles.iconCont}>
-                <Icon name="star" style={[styles.Icon, { color: "orange" }]} />
-                <Text style={{ color: "orange", fontWeight: "bold" }}>
-                  {this.state.movie.vote_average}/10
-                </Text>
-              </View>
-              <View style={styles.iconCont}>
-                <Icon name="eye" style={[styles.Icon, { color: "#0e95ad" }]} />
-                <Text style={{ color: "#0e95ad", fontWeight: "bold" }}>
-                  {this.state.movie.popularity}
-                </Text>
-              </View>
-              <View style={styles.iconCont}>
-                <TouchableOpacity onPress={this.onShare}>
-                  <Icon
-                    name="share"
-                    style={[
-                      styles.Icon,
-                      { color: "#db120b", alignSelf: "center" }
-                    ]}
-                  />
-                  <Text style={{ color: "#db120b" }}>Share Poster</Text>
+            </Left> */}
+              <Right style={styles.playIcon}>
+                <TouchableOpacity
+                  onPress={() => alert("jdncj")}
+                >
+                  <Icon name="play" style={[styles.favIcon]} />
                 </TouchableOpacity>
-              </View>
-            </Item>
-            <View>
-              <Text style={styles.headLine}>Overview</Text>
-              <Text style={styles.overview}>{this.state.movie.overview}</Text>
+              </Right>
             </View>
 
-            <View>
-              <Text style={styles.headLine}>Cast</Text>
-              {this.state.noCastAvailable ? (
-                <Text style={styles.overview}>
-                  Sorry But there is No Available Cast For This Movie
+            {/*Data */}
+
+            <Content padder>
+              <Text style={styles.movieTitle}>{this.state.movie.title} </Text>
+              <Item style={{ borderBottomWidth: 0 }}>
+                <Icon name="calendar" style={styles.dateText} />
+                <Text style={styles.dateText}>
+                  {this.state.movie.release_date}
                 </Text>
-              ) : this.state.actors.length ? (
-                <Carousel
-                  ref={c => {
-                    this._carousel = c;
-                  }}
-                  data={this.state.actors}
-                  renderItem={this.renderActors}
-                  sliderWidth={0.9 * Width}
-                  itemWidth={0.5 * Width}
-                  layout={"default"}
-                />
-              ) : (
-                <ActivityIndicator size="large" color={mainColor} />
-              )}
-            </View>
-          </Content>
+              </Item>
+              <View style={styles.movieData}>
+                <View style={styles.iconCont}>
+                  <Icon
+                    name="star"
+                    style={[styles.Icon, { color: "orange" }]}
+                  />
+                  <Text style={{ color: "orange", fontWeight: "bold" }}>
+                    {this.state.movie.vote_average}/10
+                  </Text>
+                </View>
+                <View style={styles.iconCont}>
+                  <Icon
+                    name="eye"
+                    style={[styles.Icon, { color: "#0e95ad" }]}
+                  />
+                  <Text style={{ color: "#0e95ad", fontWeight: "bold" }}>
+                    {this.state.movie.popularity}
+                  </Text>
+                </View>
+                <View style={styles.iconCont}>
+                  <TouchableOpacity onPress={this.onShare}>
+                    <Icon
+                      name="share"
+                      style={[
+                        styles.Icon,
+                        { color: "#db120b", alignSelf: "center" }
+                      ]}
+                    />
+                    <Text style={{ color: "#db120b" }}>Share Poster</Text>
+                  </TouchableOpacity>
+                </View>
+              </View>
+              <View>
+                <Text style={styles.headLine}>Overview</Text>
+                <Text style={styles.overview}>{this.state.movie.overview}</Text>
+              </View>
+
+              <View>
+                <Text style={styles.headLine}>Cast</Text>
+                {this.state.noCastAvailable ? (
+                  <Text style={styles.overview}>
+                    Sorry But there is No Available Cast For This Movie
+                  </Text>
+                ) : this.state.actors.length ? (
+                  <Carousel
+                    ref={c => {
+                      this._carousel = c;
+                    }}
+                    data={this.state.actors}
+                    renderItem={this.renderActors}
+                    sliderWidth={0.9 * Width}
+                    itemWidth={0.5 * Width}
+                    layout={"default"}
+                  />
+                ) : (
+                  <ActivityIndicator size="large" color={mainColor} />
+                )}
+              </View>
+            </Content>
+          </View>
         </ScrollView>
       </>
     );

@@ -12,7 +12,7 @@ import {
 } from "react-native";
 import { Icon, Left, Right } from "native-base";
 import SmallMovie from "../../components/SmallMovie/SmallMovie";
-import { baseUrl, apiKey, mainColor } from "../../configs/global";
+import { baseUrl, apiKey, mainColor,bgColor, textColor } from "../../configs/global";
 import styles, { animation, animatedHeight } from "./style";
 
 const { width, height } = Dimensions.get("screen");
@@ -137,7 +137,7 @@ export default class ActorProfile extends Component {
 
   render() {
     return (
-      <View>
+      <View >
         <Image
           style={{
             width,
@@ -177,7 +177,7 @@ export default class ActorProfile extends Component {
               <Text
                 numberOfLines={5}
                 ellipsizeMode="tail"
-                style={{ textAlign: "center" }}
+                style={{ textAlign: "center",color:textColor }}
               >
                 {this.state.biography  || `Sorry There is available Bio for ${this.state.actor.name}`}
               </Text>

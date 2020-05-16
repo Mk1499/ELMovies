@@ -1314,6 +1314,7 @@ drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable assets_images_actor
+drawable assets_images_defaultmovie
 drawable assets_images_logo
 drawable assets_images_movie
 drawable avd_hide_password

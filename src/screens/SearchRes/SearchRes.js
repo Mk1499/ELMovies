@@ -9,8 +9,8 @@ import {
   AsyncStorage,
   TouchableWithoutFeedback
 } from "react-native";
-import { Item, Left, Content, Container, Header } from "native-base";
-import { mainColor } from "../../configs/global";
+import { Item, Left, Content, Container, Header, Icon } from "native-base";
+import { mainColor, textColor } from "../../configs/global";
 import BigMovie from "../../components/BigMovie/BigMovie";
 import { apiKey, baseUrl } from "../../configs/global";
 import { connect } from "react-redux";
@@ -20,19 +20,7 @@ import { styles } from "./style";
 import commStyle from "../commStyle";
 
 class SearchRes extends Component {
-  static navigationOptions = ({ navigation }) => {
-    return {
-      headerTitle: navigation.getParam('Title', 'Default Title'),
-      //Default Title of ActionBar
-      headerStyle: {
-        backgroundColor: navigation.getParam('BackgroundColor', '#ED2525'),
-        //Background color of ActionBar
-      },
-      headerTintColor: navigation.getParam('HeaderTintColor', '#fff'),
-      //Text color of ActionBar
-    };
-  };
-  
+ 
   constructor(props) {
     super(props);
     this.state = {
@@ -129,14 +117,16 @@ class SearchRes extends Component {
   render() {
     return (
       <Container style={commStyle.container}>
-        <Content padder>
-          <Item style={{ borderBottomWidth: 0 }}>
+          <Item style={{ borderBottomWidth: 0,backgroundColor:mainColor,justifyContent:'center' }}>
             <Left style={styles.rowView}>
+              <TouchableOpacity onPress={()=>this.props.navigation.goBack()}>
+                <Icon name="arrowleft" type="AntDesign" style={styles.backIcon}/>
+              </TouchableOpacity>
               <Text style={styles.headLine}>Search Results for :</Text>
               <Text
                 style={[
                   styles.headLine,
-                  { color: mainColor, fontWeight: "bold" }
+                  { color: textColor, fontWeight: "bold" }
                 ]}
               >
                 {" "}
@@ -144,6 +134,7 @@ class SearchRes extends Component {
               </Text>
             </Left>
           </Item>
+        <Content padder>
           {this.state.mediaList.length > 0 && !this.state.searchDone ? (
             this.state.mediaList.map(movie => (
               <TouchableOpacity

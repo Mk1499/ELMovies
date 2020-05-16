@@ -2,7 +2,7 @@ import {StyleSheet, Dimensions, Animated, PanResponder} from 'react-native';
 const ScreenHeight = Dimensions.get('window').height;
 const ScreenWidth = Dimensions.get('window').width;
 const { width, height } = Dimensions.get("screen");
-import { mainColor } from "../../configs/global";
+import { mainColor,bgColor ,textColor} from "../../configs/global";
 
 export const animation = new Animated.ValueXY({x: 0, y: 0 });
 
@@ -20,7 +20,7 @@ export const animatedImageHeight = animation.y.interpolate({
   export default styles = StyleSheet.create({
     mainView: {
       marginTop: -0.1 * height,
-      backgroundColor: "#fff",
+      backgroundColor: bgColor,
       padding: 0.05 * width,
       borderTopLeftRadius: 25,
       borderTopRightRadius: 25,
@@ -33,7 +33,8 @@ export const animatedImageHeight = animation.y.interpolate({
       shadowRadius: 3.84,
   
       elevation: 5,
-      height: 0.83 * height
+      height: 0.83 * height,
+      color: textColor
     },
   
     iconView: {
@@ -62,15 +63,18 @@ export const animatedImageHeight = animation.y.interpolate({
     iconText:{
       color: mainColor,
       textAlign: "center",
-      marginTop: 15
+      marginTop: 15,
+      color:textColor
     },
     note:{
       fontSize: 0.05 * width,
-      color: "grey"
+      color: mainColor
     },
     actorName:{
       fontSize: 0.08 * width,
-      fontWeight: "bold"
+      fontWeight: "bold",
+      color:textColor
+
     }
   
   });

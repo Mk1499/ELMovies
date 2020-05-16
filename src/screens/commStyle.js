@@ -1,11 +1,12 @@
 import {StyleSheet , Dimensions} from 'react-native';
+import {bgColor} from '../configs/global'
 
 const mainStyle = StyleSheet.create({
     container: {
-        backgroundColor: '#eee' 
+        backgroundColor: bgColor
       },
       header: {
-        backgroundColor: "#010911"
+        backgroundColor: bgColor
       }
 }); 
 export default mainStyle ; 
