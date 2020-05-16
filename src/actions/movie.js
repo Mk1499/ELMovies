@@ -18,7 +18,7 @@ export const intializeFav = () => async dispatch => {
         payload: list
       });
     }
-  } catch {}
+  } catch { }
 };
 
 //check if movies in Fav List
@@ -33,12 +33,12 @@ let existInFav = async movie => {
 };
 
 // add movie to favourits
-export const addToFav =  movie => async dispatch =>  {
+export const addToFav = movie => async dispatch => {
   try {
     AsyncStorage.getItem("favMoviesList")
       .then(res => JSON.parse(res))
       .then(async res => {
-       // console.log("RES", await existInFav(movie));
+        // console.log("RES", await existInFav(movie));
         if (!(await existInFav(movie))) {
           res.push(movie);
           AsyncStorage.setItem("favMoviesList", JSON.stringify(res));
@@ -60,7 +60,7 @@ export const addToFav =  movie => async dispatch =>  {
 
 
 export const removeFromFav = movie => async dispatch => {
-  
+
 }
 export const getPopularMovies = () => async dispatch => {
   fetch(`${baseUrl}/movie/popular?api_key=${apiKey}&language=en-US&page=1`)
@@ -70,11 +70,11 @@ export const getPopularMovies = () => async dispatch => {
 
       dispatch({
         type: SETPOPULAR,
-        payload: res.results.slice(0,5)
+        payload: res.results.slice(0, 5)
       });
     })
     .catch(err => {
-     // console.log("popular movies Err : ", err);
+      // console.log("popular movies Err : ", err);
     });
 };
 
@@ -84,7 +84,7 @@ export const getNowPlayingMovies = () => dispatch => {
     .then(res => {
       dispatch({
         type: SETPLAYING,
-        payload: res.results.slice(0,5)
+        payload: res.results.slice(0, 5)
       });
     });
 };
