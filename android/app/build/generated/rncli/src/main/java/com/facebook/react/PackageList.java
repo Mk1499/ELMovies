@@ -11,11 +11,13 @@ import com.facebook.react.shell.MainReactPackage;
 import java.util.Arrays;
 import java.util.ArrayList;
 
-import com.elmovie.BuildConfig;
-import com.elmovie.R;
+import com.mk14.movielab.BuildConfig;
+import com.mk14.movielab.R;
 
 // @react-native-community/art
 import com.reactnativecommunity.art.ARTPackage;
+// @react-native-community/google-signin
+import co.apptailor.googlesignin.RNGoogleSigninPackage;
 // react-native-gesture-handler
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 // react-native-linear-gradient
@@ -76,6 +78,7 @@ public class PackageList {
     return new ArrayList<>(Arrays.<ReactPackage>asList(
       new MainReactPackage(mConfig),
       new ARTPackage(),
+      new RNGoogleSigninPackage(),
       new RNGestureHandlerPackage(),
       new LinearGradientPackage(),
       new ReanimatedPackage(),

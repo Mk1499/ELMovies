@@ -1,5 +1,5 @@
 {
-  "name": "elmovie",
+  "name": "movielab",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@react-native-community/art": "^1.2.0",
+    "@react-native-community/google-signin": "^4.0.3",
     "native-base": "^2.13.8",
     "react": "16.9.0",
     "react-native": "0.61.3",
