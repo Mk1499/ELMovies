@@ -1,7 +1,7 @@
 /**
  * Automatically generated file. DO NOT MODIFY
  */
-package com.elmovie;
+package com.mk14.elmovie;
 
 public final class BuildConfig {
   public static final boolean DEBUG = Boolean.parseBoolean("true");
