@@ -16,24 +16,24 @@
         "source": "/home/mkhaled/.gradle/caches/transforms-2/files-2.1/93e4d9e4f41c18c0464bdb38685dd12b/res/color/design_box_stroke_color.xml"
     },
     {
-        "merged": "/media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
-        "source": "/home/mkhaled/.gradle/caches/transforms-2/files-2.1/a0cb16bebedb3b55d7f80c2eaa87484c/res/drawable-hdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png"
-    },
-    {
         "merged": "/media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
         "source": "/home/mkhaled/.gradle/caches/transforms-2/files-2.1/a0cb16bebedb3b55d7f80c2eaa87484c/res/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
+    },
+    {
+        "merged": "/media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
+        "source": "/home/mkhaled/.gradle/caches/transforms-2/files-2.1/a0cb16bebedb3b55d7f80c2eaa87484c/res/drawable-hdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
         "merged": "/media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
         "source": "/home/mkhaled/.gradle/caches/transforms-2/files-2.1/a0cb16bebedb3b55d7f80c2eaa87484c/res/drawable-xxhdpi-v4/abc_btn_check_to_on_mtrl_015.png"
     },
     {
-        "merged": "/media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/build/intermediates/res/merged/debug/anim_abc_slide_in_bottom.xml.flat",
-        "source": "/home/mkhaled/.gradle/caches/transforms-2/files-2.1/a0cb16bebedb3b55d7f80c2eaa87484c/res/anim/abc_slide_in_bottom.xml"
-    },
-    {
         "merged": "/media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/build/intermediates/res/merged/debug/layout_abc_action_mode_bar.xml.flat",
         "source": "/home/mkhaled/.gradle/caches/transforms-2/files-2.1/a0cb16bebedb3b55d7f80c2eaa87484c/res/layout/abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "/media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/build/intermediates/res/merged/debug/anim_abc_slide_in_bottom.xml.flat",
+        "source": "/home/mkhaled/.gradle/caches/transforms-2/files-2.1/a0cb16bebedb3b55d7f80c2eaa87484c/res/anim/abc_slide_in_bottom.xml"
     },
     {
         "merged": "/media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/build/intermediates/res/merged/debug/color_mtrl_tabs_legacy_text_color_selector.xml.flat",
@@ -66,6 +66,10 @@
     {
         "merged": "/media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_menu_hardkey_panel_mtrl_mult.9.png.flat",
         "source": "/home/mkhaled/.gradle/caches/transforms-2/files-2.1/a0cb16bebedb3b55d7f80c2eaa87484c/res/drawable-xxhdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png"
+    },
+    {
+        "merged": "/media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher2.png.flat",
+        "source": "/media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/res/mipmap-hdpi/ic_launcher2.png"
     },
     {
         "merged": "/media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
@@ -1878,10 +1882,6 @@
     {
         "merged": "/media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
         "source": "/home/mkhaled/.gradle/caches/transforms-2/files-2.1/a0cb16bebedb3b55d7f80c2eaa87484c/res/drawable-hdpi-v4/abc_spinner_mtrl_am_alpha.9.png"
-    },
-    {
-        "merged": "/media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher1.png.flat",
-        "source": "/media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/res/mipmap-hdpi/ic_launcher1.png"
     },
     {
         "merged": "/media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/build/intermediates/res/merged/debug/color_mtrl_choice_chip_ripple_color.xml.flat",

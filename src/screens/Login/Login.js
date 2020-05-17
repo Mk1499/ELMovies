@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Text, View, Image, ImageBackground, Alert } from "react-native";
+import { Text, View, Image, ImageBackground, Animated } from "react-native";
 import styles from "./style";
 import { WEB_CLIENT_ID } from "../../configs/keys";
 import {
@@ -10,20 +10,39 @@ import {
 import { connect } from "react-redux";
 import { googleLogin } from "../../actions/auth";
 import BG from "../../../assets/images/bg.jpg";
-import {Form,Input,Item} from 'native-base'; 
-import Btn from '../../components/Button/Button';
-
+import { Form, Input, Item } from "native-base";
+import Btn from "../../components/Button/Button";
 
 class Login extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      textWidth: new Animated.Value(0),
+      logoOpacity: new Animated.Value(0.5)
+    };
   }
 
   componentDidMount() {
     GoogleSignin.configure({
       webClientId: WEB_CLIENT_ID // client ID of type WEB for your server (needed to verify user ID and offline access)
     });
+    this.animatedWidth();
+    this.animatedOpacity();
   }
+
+  animatedWidth = () => {
+    Animated.timing(this.state.textWidth, {
+      toValue: 100,
+      duration: 1000
+    }).start();
+  };
+
+  animatedOpacity = () => {
+    Animated.timing(this.state.logoOpacity, {
+      toValue: 1,
+      duration: 1000
+    }).start();
+  };
 
   getCurrentUserInfo = async () => {
     try {
@@ -51,14 +70,41 @@ class Login extends Component {
     return (
       <ImageBackground source={BG} style={styles.containerBG}>
         <View style={styles.container}>
-        <Form style={styles.form}>
+          <View style={styles.LogoContainer}>
+            <Animated.View style={{ opacity: this.state.logoOpacity }}>
+              <Image
+                style={[styles.logoImg]}
+                source={require("../../../assets/images/logo2.png")}
+                resizeMode="contain"
+              />
+            </Animated.View>
+            <Animated.View
+              style={[styles.appNameView, { width: this.state.textWidth }]}
+            >
+              <Text style={styles.appName}>Movie Lab</Text>
+            </Animated.View>
+          </View>
+          <Form style={styles.form}>
             <Item>
-              <Input placeholder="Username" style={styles.input} placeholderTextColor="#eee" />
+              <Input
+                placeholder="Username"
+                style={styles.input}
+                placeholderTextColor="#eee"
+              />
             </Item>
             <Item last>
-              <Input placeholder="Password" style={styles.input} placeholderTextColor="#eee"/>
+              <Input
+                placeholder="Password"
+                style={styles.input}
+                placeholderTextColor="#eee"
+              />
             </Item>
-              <Btn title="Sign In" action={()=>{alert("sdjknj")}} />
+            <Btn
+              title="Sign In"
+              action={() => {
+                alert("sdjknj");
+              }}
+            />
           </Form>
           <GoogleSigninButton
             style={{ width: 192, height: 48 }}

@@ -1857,7 +1857,7 @@ layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
 mipmap ic_launcher
-mipmap ic_launcher1
+mipmap ic_launcher2
 mipmap ic_launcher_round
 mipmap ic_launcher_round1
 mipmap icon

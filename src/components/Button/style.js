@@ -7,5 +7,14 @@ export default styles = StyleSheet.create({
     btn:{
         backgroundColor:mainColor,
         height:0.1*height,
+        alignItems:'center',
+        justifyContent:'center',
+        borderRadius:0.1*height,
+        marginTop:0.1*height
+    },
+    btnText:{
+        color:"#eee",
+        fontWeight:'bold',
+        fontSize:0.06*width
     }
 })

@@ -1856,7 +1856,7 @@ int layout text_view_with_line_height_from_style 0x7f0b0061
 int layout text_view_with_theme_line_height 0x7f0b0062
 int layout text_view_without_line_height 0x7f0b0063
 int mipmap ic_launcher 0x7f0c0000
-int mipmap ic_launcher1 0x7f0c0001
+int mipmap ic_launcher2 0x7f0c0001
 int mipmap ic_launcher_round 0x7f0c0002
 int mipmap ic_launcher_round1 0x7f0c0003
 int mipmap icon 0x7f0c0004
