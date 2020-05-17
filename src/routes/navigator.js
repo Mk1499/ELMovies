@@ -3,14 +3,18 @@ import { createAppContainer } from "react-navigation";
 import { Dimensions } from "react-native";
 import { createBottomTabNavigator } from "react-navigation-tabs";
 import { createStackNavigator } from "react-navigation-stack";
-import { mainColor , bgColor} from "../configs/global";
+import { mainColor, bgColor } from "../configs/global";
 
-import {createSharedElementStackNavigator} from 'react-navigation-shared-element'; 
+import { createSharedElementStackNavigator } from "react-navigation-shared-element";
+
+import Login from "../screens/Login/Login";
+import userProfile from "../screens/userProfile/userProfile";
 
 import Home from "../screens/Home/Home"; // Movie Home
 import FavMovies from "../screens/FavMovies/FavMovies";
 import SearchRes from "../screens/SearchRes/SearchRes";
 import Movie from "../screens/Movie/Movie";
+
 
 import TVHome from "../screens/TV/TV";
 import Series from "../screens/Series/Series";
@@ -19,6 +23,9 @@ import ActorProfile from "../screens/ActorProfile/ActorProfile";
 
 import { Icon } from "native-base";
 const { width } = Dimensions.get("window");
+
+
+// Stacks 
 
 const MovieStack = createStackNavigator({
   Home: {
@@ -38,7 +45,7 @@ const MovieStack = createStackNavigator({
       headerPressColorAndroid: main,
       headerTintColor: mainColor,
       headerTransparent: true,
-      header:null
+      header: null
     })
   },
   Movie: {
@@ -67,7 +74,7 @@ const MovieStack = createStackNavigator({
       headerPressColorAndroid: mainColor,
       headerTintColor: mainColor
     })
-  },
+  }
 });
 
 const TVStack = createStackNavigator({
@@ -97,8 +104,7 @@ const TVStack = createStackNavigator({
       headerPressColorAndroid: main,
       headerTintColor: mainColor,
       headerTransparent: true,
-      header:null
-
+      header: null
     })
   },
   ActorProfile: {
@@ -118,7 +124,7 @@ const TVStack = createStackNavigator({
       headerPressColorAndroid: mainColor,
       headerTintColor: mainColor
     })
-  },
+  }
 });
 
 const FavStack = createStackNavigator({
@@ -141,7 +147,26 @@ const FavStack = createStackNavigator({
   }
 });
 
-const main = createBottomTabNavigator(
+const UserStack = createStackNavigator({
+  Profile: {
+    screen: userProfile,
+    navigationOptions: () => ({
+      headerTitle: "",
+      headerStyle: {
+        backgroundColor: "#010817"
+      }
+    })
+  },
+
+  Movie: {
+    screen: Movie,
+    navigationOptions: () => ({
+      headerTitle: "",
+      headerTransparent: true
+    })
+  }
+});
+const mainBtm = createBottomTabNavigator(
   {
     Movies: {
       screen: MovieStack,
@@ -174,11 +199,15 @@ const main = createBottomTabNavigator(
       }
     },
     Profile: {
-      screen: FavStack,
+      screen: userProfile,
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => {
           return (
-            <Icon name="profile" type="AntDesign" style={{ color: tintColor, fontSize: 20 }} />
+            <Icon
+              name="profile"
+              type="AntDesign"
+              style={{ color: tintColor, fontSize: 20 }}
+            />
           );
         }
       }
@@ -207,6 +236,21 @@ const main = createBottomTabNavigator(
     }
   }
 );
+
+const main = createStackNavigator({
+  Login: {
+    screen: Login,
+    navigationOptions: {
+      header: null
+    }
+  },
+  Home: {
+    screen: mainBtm,
+    navigationOptions: {
+      header: null
+    }
+  }
+});
 
 // const screens = createStackNavigator({ main }, { defaultNavigationOptions: { header: null } })
 

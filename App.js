@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Text, Dimensions } from "react-native";
 import AppNavigation from "./src/routes/navigator";
+import NavigationService from "./src/routes/NavigationServices";
 
 import { Provider } from "react-redux";
 import store from "./src/store";
@@ -8,19 +9,22 @@ import store from "./src/store";
 const { width: Width, height: Hight } = Dimensions.get("window");
 
 export default class App extends Component {
-
-  constructor(){
+  constructor() {
     super();
-    console.disableYellowBox = true; 
+    console.disableYellowBox = true;
   }
 
   render() {
     return (
       <Provider store={store}>
-        <AppNavigation />
+        <AppNavigation
+          ref={navigatorRef => {
+            NavigationService.setTopLevelNavigator(navigatorRef);
+          }}
+        />
       </Provider>
     );
-  } 
+  }
 }
 
 const styles = StyleSheet.create({

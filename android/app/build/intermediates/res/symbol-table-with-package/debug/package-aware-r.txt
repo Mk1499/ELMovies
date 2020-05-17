@@ -1330,10 +1330,6 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
-drawable assets_images_actor
-drawable assets_images_defaultmovie
-drawable assets_images_logo
-drawable assets_images_movie
 drawable avd_hide_password
 drawable avd_show_password
 drawable background_splash
@@ -1393,8 +1389,6 @@ drawable mtrl_popupmenu_background
 drawable mtrl_popupmenu_background_dark
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
-drawable node_modules_reactnavigationstack_lib_module_views_assets_backicon
-drawable node_modules_reactnavigationstack_lib_module_views_assets_backiconmask
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -1866,6 +1860,7 @@ mipmap ic_launcher
 mipmap ic_launcher1
 mipmap ic_launcher_round
 mipmap ic_launcher_round1
+mipmap icon
 mipmap launch_screen
 plurals mtrl_badge_content_description
 raw app
@@ -1968,7 +1963,6 @@ string common_google_play_services_wear_update_text
 string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
-string default_web_client_id
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
