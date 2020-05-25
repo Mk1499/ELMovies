@@ -39,6 +39,8 @@ target 'ELMovie' do
 
   pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
 
+  pod 'RCTYouTube', :path => '../node_modules/react-native-youtube'
+
   target 'ELMovieTests' do
     inherit! :search_paths
     # Pods for testing

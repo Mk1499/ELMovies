@@ -16,7 +16,11 @@ import ActorComp from "../../components/Actor/ActorComp";
 import Image from "react-native-image-progress";
 import * as Progress from "react-native-progress";
 import Carousel from "react-native-snap-carousel";
+import {YouTubeStandaloneAndroid} from 'react-native-youtube'
+ 
 const { width: Width, height: Height } = Dimensions.get("window");
+
+
 
 export default class Movie extends Component {
   constructor(props) {
@@ -25,7 +29,8 @@ export default class Movie extends Component {
       movie: this.props.navigation.getParam("movie"),
       movieInFav: false,
       actors: [],
-      noCastAvailable: false
+      noCastAvailable: false, 
+      trailerID:""
     };
   }
 
@@ -34,7 +39,7 @@ export default class Movie extends Component {
     this.setState({
       movieInFav: m
     });
-    this.getActors();
+    this.getActors().then(() => this.getTrailerID())
   };
 
   getActors = async () => {
@@ -58,6 +63,19 @@ export default class Movie extends Component {
         //  console.log(err);
       });
   };
+
+  getTrailerID = async () => {
+    await fetch(`${baseUrl}/movie/${this.state.movie.id}/videos?api_key=${apiKey}&language=en-US&page=1`)
+    .then(res => res.json())
+    .then(res => {
+      
+      this.setState({
+        trailerID: res.results[0].key
+      })
+    })
+  
+  }
+
 
   back = () => {
     this.props.navigation.goBack();
@@ -146,6 +164,25 @@ export default class Movie extends Component {
     this.props.navigation.replace("ActorProfile", { actor });
   };
 
+  playTrailer = async () => {
+    if (this.state.trailerID){
+
+      YouTubeStandaloneAndroid.playVideo({
+        apiKey: 'AIzaSyAaHgdfhvZCfUllngP3lVM7Gbtnybsj-O4', // Your YouTube Developer API Key
+        videoId: this.state.trailerID, // YouTube video ID
+        autoplay: true, // Autoplay the video
+        startTime: 0, // Starting point of video (in seconds)
+      })
+      .then(() => console.log('Standalone Player Exited'))
+      .catch(errorMessage => console.error(errorMessage));
+    }else {
+      alert("Sorry But This movie trailer unavailble")
+    }
+  }
+
+
+
+
   render() {
     return (
       <>
@@ -198,7 +235,7 @@ export default class Movie extends Component {
             </Left> */}
               <Right style={styles.playIcon}>
                 <TouchableOpacity
-                  onPress={() => alert("jdncj")}
+                  onPress={this.playTrailer}
                 >
                   <Icon name="play" style={[styles.favIcon]} />
                 </TouchableOpacity>

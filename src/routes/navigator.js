@@ -15,10 +15,10 @@ import FavMovies from "../screens/FavMovies/FavMovies";
 import SearchRes from "../screens/SearchRes/SearchRes";
 import Movie from "../screens/Movie/Movie";
 
-
 import TVHome from "../screens/TV/TV";
 import Series from "../screens/Series/Series";
 
+import Actors from '../screens/Actors/Actor'; 
 import ActorProfile from "../screens/ActorProfile/ActorProfile";
 
 import { Icon } from "native-base";
@@ -28,6 +28,8 @@ const { width } = Dimensions.get("window");
 // Stacks 
 
 const MovieStack = createStackNavigator({
+
+  
   Home: {
     screen: Home,
     navigationOptions: () => ({
@@ -74,7 +76,7 @@ const MovieStack = createStackNavigator({
       headerPressColorAndroid: mainColor,
       headerTintColor: mainColor
     })
-  }
+  },
 });
 
 const TVStack = createStackNavigator({
@@ -124,7 +126,7 @@ const TVStack = createStackNavigator({
       headerPressColorAndroid: mainColor,
       headerTintColor: mainColor
     })
-  }
+  },
 });
 
 const FavStack = createStackNavigator({
@@ -146,6 +148,44 @@ const FavStack = createStackNavigator({
     })
   }
 });
+
+const ActorStack = createStackNavigator({
+  Actors: {
+    screen: Actors,
+    navigationOptions: () => ({
+      header:null
+    })
+  },
+
+  Movie: {
+    screen: Movie,
+    navigationOptions: () => ({
+      headerTitle: "",
+      headerTransparent: true,
+      headerPressColorAndroid: mainColor,
+      headerTintColor: mainColor
+    })
+  },
+  ActorProfile: {
+    screen: ActorProfile,
+    navigationOptions: () => ({
+      headerTitle: "",
+      headerTransparent: true,
+      headerPressColorAndroid: mainColor,
+      headerTintColor: mainColor
+    })
+  },
+  Series: {
+    screen: Series,
+    navigationOptions: () => ({
+      headerTitle: "",
+      headerTransparent: true,
+      headerPressColorAndroid: mainColor,
+      headerTintColor: mainColor
+    })
+  }
+});
+
 
 const UserStack = createStackNavigator({
   Profile: {
@@ -189,7 +229,7 @@ const mainBtm = createBottomTabNavigator(
       }
     },
     Actors: {
-      screen: FavStack,
+      screen: ActorStack,
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => {
           return (

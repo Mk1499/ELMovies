@@ -32,6 +32,8 @@ import cl.json.RNSharePackage;
 import com.ijzerenhein.sharedelement.RNSharedElementPackage;
 // react-native-splash-screen
 import org.devio.rn.splashscreen.SplashScreenReactPackage;
+// react-native-youtube
+import com.inprogress.reactnativeyoutube.ReactNativeYouTube;
 
 public class PackageList {
   private Application application;
@@ -85,7 +87,8 @@ public class PackageList {
       new RNScreensPackage(),
       new RNSharePackage(),
       new RNSharedElementPackage(),
-      new SplashScreenReactPackage()
+      new SplashScreenReactPackage(),
+      new ReactNativeYouTube()
     ));
   }
 }

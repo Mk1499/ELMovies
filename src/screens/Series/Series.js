@@ -11,11 +11,12 @@ import {
 } from "react-native";
 import { Item, Icon, Left, Body, Right, Content, CardItem } from "native-base";
 import { styles } from "./styleSeries";
-import { baseUrl, apiKey, mainColor } from "../../configs/global";
+import { baseUrl, apiKey, mainColor , textColor} from "../../configs/global";
 import ActorComp from "../../components/Actor/ActorComp";
 import Image from "react-native-image-progress";
 import * as Progress from "react-native-progress";
 import Carousel from "react-native-snap-carousel";
+import {YouTubeStandaloneAndroid} from 'react-native-youtube'
 
 const { width: Width, height: Height } = Dimensions.get("window");
 
@@ -37,7 +38,7 @@ export default class Series extends Component {
     this.setState({
       seriesInFav: m
     });
-    this.getActors();
+    this.getActors().then(()=>this.getTrailerID())
   };
 
   getActors = async () => {
@@ -61,6 +62,18 @@ export default class Series extends Component {
       //  console.log(err);
       });
   };
+
+  getTrailerID = async () => {
+    await fetch(`${baseUrl}/tv/${this.state.series.id}/videos?api_key=${apiKey}&language=en-US&page=1`)
+    .then(res => res.json())
+    .then(res => {
+      
+      this.setState({
+        trailerID: res.results[0].key
+      })
+    })
+  
+  }
 
   back = () => {
     this.props.navigation.goBack();
@@ -145,6 +158,22 @@ export default class Series extends Component {
     );
   };
 
+
+  playTrailer = async () => {
+    if (this.state.trailerID){
+
+      YouTubeStandaloneAndroid.playVideo({
+        apiKey: 'AIzaSyAaHgdfhvZCfUllngP3lVM7Gbtnybsj-O4', // Your YouTube Developer API Key
+        videoId: this.state.trailerID, // YouTube video ID
+        autoplay: true, // Autoplay the video
+        startTime: 0, // Starting point of video (in seconds)
+      })
+      .then(() => console.log('Standalone Player Exited'))
+      .catch(errorMessage => console.error(errorMessage));
+    }else {
+      alert("Sorry But This movie trailer unavailble")
+    }
+  }
   render() {
     return (
       <>
@@ -190,10 +219,10 @@ export default class Series extends Component {
             </Left>
             <Right>
               <TouchableOpacity
-                onPress={() => this.addToFav(this.state.series)}
+                onPress={this.playTrailer}
               >
                 <Icon
-                  name={this.state.seriesInFav ? "heart" : "heart-empty"}
+                  name="play"
                   style={[styles.favIcon]}
                 />
               </TouchableOpacity>
@@ -207,8 +236,8 @@ export default class Series extends Component {
               {this.state.series.original_name || this.state.series.name }
             </Text>
             <Item style={{ borderBottomWidth: 0 }}>
-              <Icon name="calendar" />
-              <Text>{this.state.series.first_air_date || "N/A"}</Text>
+              <Icon name="calendar" style={{color:textColor}}/>
+              <Text style={styles.seriesDate}>{this.state.series.first_air_date || "N/A"}</Text>
             </Item>
             <Item style={styles.seriesData}>
               <View style={styles.iconCont}>
@@ -226,13 +255,13 @@ export default class Series extends Component {
               <View style={styles.iconCont}>
                 <TouchableOpacity onPress={this.onShare}>
                   <Icon
-                    name="share"
+                    name={this.state.seriesInFav ? "heart" : "heart-empty"}
                     style={[
                       styles.Icon,
                       { color: "#db120b", alignSelf: "center" }
                     ]}
                   />
-                  <Text style={{ color: "#db120b" }}>Share Poster</Text>
+                  <Text style={{ color: "#db120b" }}>Add To Fav</Text>
                 </TouchableOpacity>
               </View>
             </Item>

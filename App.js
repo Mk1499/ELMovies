@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { StyleSheet, View, Text, Dimensions } from "react-native";
+import { StyleSheet, View, Text, Dimensions,StatusBar } from "react-native";
 import AppNavigation from "./src/routes/navigator";
 import NavigationService from "./src/routes/NavigationServices";
-
+import {mainColor,textColor} from './src/configs/global'; 
 import { Provider } from "react-redux";
 import store from "./src/store";
 
@@ -17,6 +17,7 @@ export default class App extends Component {
   render() {
     return (
       <Provider store={store}>
+          <StatusBar backgroundColor={mainColor} />
         <AppNavigation
           ref={navigatorRef => {
             NavigationService.setTopLevelNavigator(navigatorRef);

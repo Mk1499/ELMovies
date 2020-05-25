@@ -5,6 +5,7 @@ INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/Mo
 INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:1:1-36:12
 INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:1:1-36:12
 MERGED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml:1:1-36:12
+MERGED from [:react-native-youtube] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/react-native-youtube/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-splash-screen] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/react-native-splash-screen/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-14:12
 MERGED from [:react-native-community_art] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/@react-native-community/art/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-community_google-signin] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/@react-native-community/google-signin/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
@@ -215,6 +216,8 @@ uses-sdk
 INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml
 INJECTED from /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/src/main/AndroidManifest.xml
+MERGED from [:react-native-youtube] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/react-native-youtube/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-youtube] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/react-native-youtube/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-splash-screen] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/react-native-splash-screen/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-splash-screen] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/react-native-splash-screen/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-community_art] /media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/node_modules/@react-native-community/art/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41

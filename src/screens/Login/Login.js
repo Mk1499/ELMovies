@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Text, View, Image, ImageBackground, Animated } from "react-native";
+import { Text, View, Image, ImageBackground, Animated,Dimensions } from "react-native";
 import styles from "./style";
 import { WEB_CLIENT_ID } from "../../configs/keys";
 import {
@@ -12,6 +12,8 @@ import { googleLogin } from "../../actions/auth";
 import BG from "../../../assets/images/bg.jpg";
 import { Form, Input, Item } from "native-base";
 import Btn from "../../components/Button/Button";
+
+const {width:Width} = Dimensions.get("window"); 
 
 class Login extends Component {
   constructor(props) {
@@ -32,7 +34,7 @@ class Login extends Component {
 
   animatedWidth = () => {
     Animated.timing(this.state.textWidth, {
-      toValue: 100,
+      toValue: 0.4*Width,
       duration: 1000
     }).start();
   };
@@ -66,6 +68,12 @@ class Login extends Component {
     const currentUser = await GoogleSignin.getCurrentUser();
     this.setState({ currentUser });
   };
+
+  signIn = () => {
+    this.props.navigation.replace("Home")
+  }
+
+
   render() {
     return (
       <ImageBackground source={BG} style={styles.containerBG}>
@@ -101,9 +109,7 @@ class Login extends Component {
             </Item>
             <Btn
               title="Sign In"
-              action={() => {
-                alert("sdjknj");
-              }}
+              action={this.signIn}
             />
           </Form>
           <GoogleSigninButton
@@ -113,7 +119,7 @@ class Login extends Component {
             onPress={this.props.googleLogin}
             //   disabled={this.state.isSigninInProgress}
           />
-          <Text>{this.props.userInfo.email}</Text>
+          {/* <Text>{this.props.userInfo.email}</Text> */}
         </View>
       </ImageBackground>
     );

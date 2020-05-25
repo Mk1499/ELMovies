@@ -88,3 +88,4 @@ export const getNowPlayingMovies = () => dispatch => {
       });
     });
 };
+

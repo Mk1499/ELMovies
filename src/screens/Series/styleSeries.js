@@ -1,5 +1,5 @@
 import { StyleSheet, Dimensions } from "react-native";
-import {mainColor} from '../../configs/global'; 
+import {mainColor,bgColor,textColor} from '../../configs/global'; 
 const { width: Width, height: Height } = Dimensions.get("window");
 
 
@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
   contianer: {
     width: Width,
     height: Height,
-    backgroundColor: "#eee"
+    backgroundColor: bgColor
   },
   coverImg: {
     width: Width,
@@ -51,16 +51,19 @@ export const styles = StyleSheet.create({
   },
 
   seriesTitle: {
-    color: "#000",
+    color:textColor ,
     fontFamily: "Roboto",
     fontSize: 30
+  },
+  seriesDate:{
+    color:textColor
   },
   seriesData: {
     paddingVertical: 0.01 * Height,
     paddingHorizontal: 0.1 * Width,
     marginTop: 0.05 * Height,
-    borderTopColor: "#ddd",
-    borderTopWidth: 1
+    // borderTopColor: "#ddd",
+    // borderTopWidth: 1
   },
   headLine: {
     fontSize: 0.07 * Width,
@@ -72,6 +75,7 @@ export const styles = StyleSheet.create({
     fontFamily: "Lato-Light",
     fontSize: 0.05*Width,
     textAlign: "center",
-    marginBottom: 0.06 * Height
+    marginBottom: 0.06 * Height,
+    color:textColor
   }
 });

@@ -3,7 +3,6 @@ import { mainColor } from "../../configs/global";
 
 const { width, height } = Dimensions.get("window");
 
-
 export default styles = StyleSheet.create({
   containerBG: {
     alignItems: "center",
@@ -30,14 +29,23 @@ export default styles = StyleSheet.create({
   },
   logoImg: {
     width: 0.2 * width,
-    height: 0.2 * width
+    height: 0.2 * width,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+
+    elevation: 5
   },
   appName: {
     color: "#eee",
-    fontWeight: "bold",
-    fontSize: 20,
-    width: 200,
-    fontFamily:"Roboto"
+    // fontWeight: "bold",
+    fontSize: 0.09 * width,
+    width: 0.4 * width,
+    fontFamily: "Oswald"
   },
   appNameView: {
     justifyContent: "center",

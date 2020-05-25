@@ -15,6 +15,7 @@ export default styles = StyleSheet.create({
     btnText:{
         color:"#eee",
         fontWeight:'bold',
-        fontSize:0.06*width
+        fontSize:0.06*width,
+        fontFamily:'DM Mono'
     }
 })
