@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Text, View, Image, ImageBackground, Animated,Dimensions } from "react-native";
+import { Text, View, Image, ImageBackground, Animated,Dimensions,ActivityIndicator } from "react-native";
 import styles from "./style";
 import { WEB_CLIENT_ID } from "../../configs/keys";
 import {
@@ -8,7 +8,7 @@ import {
   statusCodes
 } from "@react-native-community/google-signin";
 import { connect } from "react-redux";
-import { googleLogin } from "../../actions/auth";
+import { googleLogin , signIn} from "../../actions/auth";
 import BG from "../../../assets/images/bg.jpg";
 import { Form, Input, Item } from "native-base";
 import Btn from "../../components/Button/Button";
@@ -20,7 +20,10 @@ class Login extends Component {
     super(props);
     this.state = {
       textWidth: new Animated.Value(0),
-      logoOpacity: new Animated.Value(0.5)
+      logoOpacity: new Animated.Value(0.5),
+      email:"MKe@mail.com",
+      password:"123456789",
+   
     };
   }
 
@@ -70,7 +73,17 @@ class Login extends Component {
   };
 
   signIn = () => {
-    this.props.navigation.replace("Home")
+    // this.props.navigation.replace("Home")
+
+    let msg = {
+      "email": this.state.email, 
+      "password":this.state.password
+    };   
+    this.props.signIn(msg); 
+  }
+
+  goToSignUp = () => {
+    this.props.navigation.navigate("SignUp")
   }
 
 
@@ -95,9 +108,10 @@ class Login extends Component {
           <Form style={styles.form}>
             <Item>
               <Input
-                placeholder="Username"
+                placeholder="Email"
                 style={styles.input}
                 placeholderTextColor="#eee"
+                onChangeText={email => this.setState({email})}
               />
             </Item>
             <Item last>
@@ -105,6 +119,7 @@ class Login extends Component {
                 placeholder="Password"
                 style={styles.input}
                 placeholderTextColor="#eee"
+                onChangeText={password => this.setState({password})}
               />
             </Item>
             <Btn
@@ -112,6 +127,11 @@ class Login extends Component {
               action={this.signIn}
             />
           </Form>
+          <View style={{flexDirection:'row'}} >
+
+          <Text style = {styles.signUpHeadText}>Don't Have account ? </Text>
+          <Text style={styles.signUpClickText} onPress={this.goToSignUp} >Sign Up Now</Text>
+          </View>
           <GoogleSigninButton
             style={{ width: 192, height: 48 }}
             size={GoogleSigninButton.Size.Wide}
@@ -130,4 +150,4 @@ const mapStateToProps = state => ({
   userInfo: state.auth.userInfo
 });
 
-export default connect(mapStateToProps, { googleLogin })(Login);
+export default connect(mapStateToProps, { googleLogin,signIn })(Login);

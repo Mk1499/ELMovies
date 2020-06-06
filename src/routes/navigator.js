@@ -7,8 +7,10 @@ import { mainColor, bgColor } from "../configs/global";
 
 import { createSharedElementStackNavigator } from "react-navigation-shared-element";
 
+import Splash from '../screens/Splash/Splash'; 
 import Login from "../screens/Login/Login";
 import userProfile from "../screens/userProfile/userProfile";
+import SignUp from "../screens/Signup/Signup";
 
 import Home from "../screens/Home/Home"; // Movie Home
 import FavMovies from "../screens/FavMovies/FavMovies";
@@ -18,18 +20,15 @@ import Movie from "../screens/Movie/Movie";
 import TVHome from "../screens/TV/TV";
 import Series from "../screens/Series/Series";
 
-import Actors from '../screens/Actors/Actor'; 
+import Actors from "../screens/Actors/Actor";
 import ActorProfile from "../screens/ActorProfile/ActorProfile";
 
 import { Icon } from "native-base";
 const { width } = Dimensions.get("window");
 
-
-// Stacks 
+// Stacks
 
 const MovieStack = createStackNavigator({
-
-  
   Home: {
     screen: Home,
     navigationOptions: () => ({
@@ -76,7 +75,7 @@ const MovieStack = createStackNavigator({
       headerPressColorAndroid: mainColor,
       headerTintColor: mainColor
     })
-  },
+  }
 });
 
 const TVStack = createStackNavigator({
@@ -126,7 +125,7 @@ const TVStack = createStackNavigator({
       headerPressColorAndroid: mainColor,
       headerTintColor: mainColor
     })
-  },
+  }
 });
 
 const FavStack = createStackNavigator({
@@ -153,7 +152,7 @@ const ActorStack = createStackNavigator({
   Actors: {
     screen: Actors,
     navigationOptions: () => ({
-      header:null
+      header: null
     })
   },
 
@@ -185,7 +184,6 @@ const ActorStack = createStackNavigator({
     })
   }
 });
-
 
 const UserStack = createStackNavigator({
   Profile: {
@@ -278,8 +276,20 @@ const mainBtm = createBottomTabNavigator(
 );
 
 const main = createStackNavigator({
+  Splash: {
+    screen: Splash,
+    navigationOptions: {
+      header: null
+    }
+  },
   Login: {
     screen: Login,
+    navigationOptions: {
+      header: null
+    }
+  },
+  SignUp: {
+    screen: SignUp,
     navigationOptions: {
       header: null
     }

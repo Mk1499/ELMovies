@@ -1,5 +1,5 @@
 import { StyleSheet, Dimensions } from "react-native";
-import { mainColor } from "../../configs/global";
+import { mainColor, textColor } from "../../configs/global";
 
 const { width, height } = Dimensions.get("window");
 
@@ -51,5 +51,17 @@ export default styles = StyleSheet.create({
     justifyContent: "center",
     overflow: "hidden",
     width: 50
+  },
+  signUpHeadText:{
+    textAlign:'center',
+    color:textColor,
+    fontSize:0.04 * width
+  },
+  signUpClickText:{
+    textAlign:'center',
+    color:textColor,
+    fontSize:0.04 * width,
+    fontWeight:'bold'
   }
+
 });

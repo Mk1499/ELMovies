@@ -6,19 +6,20 @@ const { width, height } = Dimensions.get("window");
 export default styles = StyleSheet.create({
   container: {
     width,
-    height
+    height,
+    backgroundColor:bgColor
   },
   topView: {
     height: 0.4 * height,
-    backgroundColor: bgColor,
+    backgroundColor: mainColor,
     borderBottomRightRadius: 0.25 * width,
-    borderBottomLeftRadius: 0.25 * width
+    borderBottomLeftRadius: 0.25 * width, 
   },
   userInfo: {
     alignSelf: "center",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: mainColor,
+    backgroundColor: bgColor,
     width: 0.9 * width,
     borderRadius: 20,
     paddingVertical: 0.1 * height,
@@ -46,7 +47,38 @@ export default styles = StyleSheet.create({
   },
   userName: {
     color: textColor,
-    fontWeight:'bold',
-    fontSize:0.07*width
+    // fontWeight:'bold',
+    fontSize:0.07*width,
+    fontFamily:"Lato-Light"
+  }, 
+  logoutIcon:{
+    color:bgColor,
+    // alignSelf:'flex-end', 
+    
+    fontSize:0.1 * width
+  }, 
+  themeSwitch:{
+    // alignSelf:'flex-start',
+    marginLeft:0.03*width,
+    alignItems:'center',
+    paddingTop:0.01*height
+  }, 
+  headView : {
+    marginRight:0.05 *width, 
+    marginTop:0.05*height,
+    flexDirection:'row', 
+    
+  },
+  headLine: {
+    fontSize: 0.07 * width,
+    color: mainColor,
+    fontFamily: "Lato-Light",
+    marginBottom: 0.06 * height
+  },
+  sectionView:{
+    marginTop:0.1*height,
+    marginBottom:0.1*height,
+    marginLeft:0.04*width,
   }
+
 });

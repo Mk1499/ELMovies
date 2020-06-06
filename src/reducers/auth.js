@@ -1,14 +1,13 @@
 
-import {LOGIN,SETUSERDATA} from '../actions/types'; 
+import {LOGIN,SETUSERDATA,SETLOGINLOADING} from '../actions/types'; 
 
 
 const INITIAL_STATE = { 
     log:"",
     userToken:"",
     loginLoading: false,
-    userInfo:{
-      email:""
-    }
+    userInfo:{}, 
+    signUpLoading:false
  };
 
 const auth = (state = INITIAL_STATE, action) => {
@@ -18,12 +17,17 @@ const auth = (state = INITIAL_STATE, action) => {
           ...state,
           userToken:action.data.token
         }
+        case SETLOGINLOADING:
+        return {
+          ...state,
+          loginLoading:action.data
+        }
         case SETUSERDATA:
           console.log("USer REdux : ",action.payload);
           
           return{
             ...state,
-            userInfo:action.payload.user
+            userInfo:action.payload.user || action.payload
           }
       default:
         return state

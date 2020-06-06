@@ -25,7 +25,7 @@ export default class Series extends Component {
     super(props);
     this.state = {
       series: this.props.navigation.getParam("series"),
-      seriesInFav: false,
+      seriesInList: false,
       actors: [],
       noCastAvailable: false
     };
@@ -36,7 +36,7 @@ export default class Series extends Component {
   componentDidMount = async () => {
     let m = await this.existInFav(this.state.series);
     this.setState({
-      seriesInFav: m
+      seriesInList: m
     });
     this.getActors().then(()=>this.getTrailerID())
   };
@@ -91,7 +91,7 @@ export default class Series extends Component {
   };
 
   // add series to favourits
-  addToFav = async series => {
+  addToList = async series => {
     try {
       AsyncStorage.getItem("favSeriesList")
         .then(res => JSON.parse(res))
@@ -102,7 +102,7 @@ export default class Series extends Component {
             AsyncStorage.setItem("favSeriesList", JSON.stringify(res));
             alert("Series Added to your Favourit Successfully");
             this.setState({
-              seriesInFav: true
+              seriesInList: true
             });
           } else {
             alert("Sorry but this series is already in your Fav List");
@@ -124,7 +124,8 @@ export default class Series extends Component {
           url:
             "https://image.tmdb.org/t/p/w500" + this.state.series.poster_path,
           message:
-            "https://image.tmdb.org/t/p/w500" + this.state.series.poster_path
+            "https://image.tmdb.org/t/p/w500" + this.state.series.poster_path,
+          type:"image/jpeg"
         },
         {
           // Android only:
@@ -239,7 +240,7 @@ export default class Series extends Component {
               <Icon name="calendar" style={{color:textColor}}/>
               <Text style={styles.seriesDate}>{this.state.series.first_air_date || "N/A"}</Text>
             </Item>
-            <Item style={styles.seriesData}>
+            <View style={styles.seriesData}>
               <View style={styles.iconCont}>
                 <Icon name="star" style={[styles.Icon, { color: "orange" }]} />
                 <Text style={{ color: "orange", fontWeight: "bold" }}>
@@ -247,24 +248,31 @@ export default class Series extends Component {
                 </Text>
               </View>
               <View style={styles.iconCont}>
-                <Icon name="eye" style={[styles.Icon, { color: "#0e95ad" }]} />
-                <Text style={{ color: "#0e95ad", fontWeight: "bold" }}>
-                  {this.state.series.popularity||"N/A"}
-                </Text>
-              </View>
+                  <TouchableOpacity onPress={this.onShare}>
+                    <Icon
+                      name="share"
+                      style={[
+                        styles.Icon,
+                        { color: "#0e95ad", alignSelf: "center" }
+                      ]}
+                    />
+                    <Text style={{ color: "#0e95ad" }}>Share Poster</Text>
+                  </TouchableOpacity>
+                </View>
               <View style={styles.iconCont}>
-                <TouchableOpacity onPress={this.onShare}>
+                <TouchableOpacity onPress={this.addToList}>
                   <Icon
-                    name={this.state.seriesInFav ? "heart" : "heart-empty"}
+                    name={this.state.seriesInList ? "playlist-check" : "playlist-plus"}
                     style={[
                       styles.Icon,
                       { color: "#db120b", alignSelf: "center" }
                     ]}
+                    type="MaterialCommunityIcons"
                   />
-                  <Text style={{ color: "#db120b" }}>Add To Fav</Text>
+                  <Text style={{ color: "#db120b" }}>{this.state.seriesInList ? "Added to List" : "Add to List"}</Text>
                 </TouchableOpacity>
               </View>
-            </Item>
+            </View>
             <View>
               <Text style={styles.headLine}>Overview</Text>
               <Text style={styles.overview}>{this.state.series.overview || `Sorry there no averview available for ${this.state.series.original_name}`}</Text>

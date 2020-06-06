@@ -1,5 +1,7 @@
 export const LOGIN = "LOGIN"; 
 export const SETUSERDATA = "SETUSERDATA"; 
+export const SETLOGINLOADING = "SETLOGINLOADING"; 
+
 
 export const SETPOPULAR = "SETPOPULAR"; 
 export const SETPLAYING = "SETPLAYING"; 
@@ -14,3 +16,6 @@ export const SETPLAYINGSERIES = "SETPLAYINGSERIES";
 export const SETPOPULARACTORS = "SETPOPULARACTORS"; 
 export const SETACTORSEARCH = "SETACTORSEARCH"; 
 export const SEARCHING = "SEARCHING";
+
+// Theme 
+export const ChangeTheme = "ChangeTheme"; 

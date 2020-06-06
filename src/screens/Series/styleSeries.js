@@ -62,6 +62,7 @@ export const styles = StyleSheet.create({
     paddingVertical: 0.01 * Height,
     paddingHorizontal: 0.1 * Width,
     marginTop: 0.05 * Height,
+    flexDirection:"row",
     // borderTopColor: "#ddd",
     // borderTopWidth: 1
   },
