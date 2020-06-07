@@ -1,8 +1,10 @@
 import { WEB_CLIENT_ID } from "../configs/keys";
-import { SETUSERDATA } from "./types";
+import { SETUSERDATA,LOADING } from "./types";
 import Navigation from "../routes/NavigationServices";
 import { customBaseUrl } from "../configs/global";
 import {AsyncStorage} from 'react-native'; 
+import { RNToasty } from 'react-native-toasty'
+
 
 import {
   GoogleSignin,
@@ -74,7 +76,10 @@ export const signIn = msg => async dispatch => {
     .then(res => res.json())
     .then(res => {
       if (res.error) {
-        alert(res.error);
+        // alert(res.error);
+        RNToasty.Error({title:res.error});
+
+        throw res.error; 
       } else {
         console.log("login Success : ", res);
         AsyncStorage.setItem("MLuserInfo", JSON.stringify(res)); 
@@ -87,6 +92,10 @@ export const signIn = msg => async dispatch => {
     })
 
     .catch(err => {
+      dispatch({
+        type: LOADING,
+        payload: false
+      });
       console.log("ERR : ", err);
     });
 };
@@ -103,7 +112,10 @@ export const signUp = msg => async dispatch => {
     .then(res => res.json())
     .then(res => {
       if (res.error) {
-        alert(res.error);
+        // alert(res.error);
+        RNToasty.Error({ title: res.error,
+        });
+        throw res.error; 
       } else {
         console.log("user created : ", res);
         AsyncStorage.setItem("MLuserData",res); 
@@ -116,6 +128,10 @@ export const signUp = msg => async dispatch => {
       }
     })
     .catch(err => {
+      dispatch({
+        type: LOADING,
+        payload: false
+      });
       console.log("ERR : ", err);
     });
 };
@@ -140,4 +156,11 @@ export const checkUser = (userData={}) => async dispatch => {
   } else {
     Navigation.navigate("Login");
   }
+}
+
+export const loadingFun = (loading=true)=> async dispatch => {
+  dispatch({
+    type:LOADING,
+    payload:loading
+  })
 }

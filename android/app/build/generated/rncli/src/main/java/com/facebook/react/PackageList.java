@@ -32,6 +32,8 @@ import cl.json.RNSharePackage;
 import com.ijzerenhein.sharedelement.RNSharedElementPackage;
 // react-native-splash-screen
 import org.devio.rn.splashscreen.SplashScreenReactPackage;
+// react-native-toasty
+import ui.toasty.RNToastyPackage;
 // react-native-youtube
 import com.inprogress.reactnativeyoutube.ReactNativeYouTube;
 
@@ -88,6 +90,7 @@ public class PackageList {
       new RNSharePackage(),
       new RNSharedElementPackage(),
       new SplashScreenReactPackage(),
+      new RNToastyPackage(),
       new ReactNativeYouTube()
     ));
   }

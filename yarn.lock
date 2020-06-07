@@ -5461,7 +5461,14 @@ react-native-tab-view@^2.11.0:
   resolved "https://registry.yarnpkg.com/react-native-tab-view/-/react-native-tab-view-2.14.0.tgz#dd801f82fdb8e92fce9688b78d13923f3a5a2b3f"
   integrity sha512-Z7XAM3NsMB96c17e9EAveunk7SUgilXWwVUTmWI1u/+p2SeOMUOB87z+//UXrcVlD1e9BPweR73q7dq7krTzTg==
 
-react-native-vector-icons@^6.6.0:
+react-native-toasty@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-toasty/-/react-native-toasty-1.0.1.tgz#f198da28db9855f97c3274c9bb744b8323708511"
+  integrity sha512-Q64EicdTk5fLt+VIWTs0RNGTYygB0Kc7Ylxo+fmApkx4LdT4qrz93ikTcjKTzNzgcz9HnLMPpiZwLGoAqzErRQ==
+  dependencies:
+    react-native-vector-icons "6.6.0"
+
+react-native-vector-icons@6.6.0, react-native-vector-icons@^6.6.0:
   version "6.6.0"
   resolved "https://registry.yarnpkg.com/react-native-vector-icons/-/react-native-vector-icons-6.6.0.tgz#66cf004918eb05d90778d64bd42077c1800d481b"
   integrity sha512-MImKVx8JEvVVBnaShMr7/yTX4Y062JZMupht1T+IEgbqBj4aQeQ1z2SH4VHWKNtWtppk4kz9gYyUiMWqx6tNSw==

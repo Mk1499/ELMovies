@@ -1,6 +1,8 @@
 import { apiKey, baseUrl } from "../configs/global";
 import { SETPOPULAR, SETPLAYING, SETFAVOURITE } from "./types";
 import { AsyncStorage } from "react-native";
+import { RNToasty } from 'react-native-toasty'
+
 
 export const intializeFav = () => async dispatch => {
   try {
@@ -46,15 +48,19 @@ export const addToFav = movie => async dispatch => {
             type: SETFAVOURITE,
             payload: res
           });
-          alert("Movie Added to your Favourit Successfully");
+          RNToasty.Success({
+            title:"Movie Added to your Favourit Successfully"
+          })
         } else {
-          alert("Sorry but this movie is already in your Fav List");
+          RNToasty.Error({
+            title:"Sorry but this movie is already in your Fav List"
+          })
         }
       })
-      .catch(err => alert(err));
+      .catch(err => RNToasty.Error({title:err}));
   } catch (error) {
     // Error saving data
-    alert(error);
+    RNToasty.Error({title:err})
   }
 };
 

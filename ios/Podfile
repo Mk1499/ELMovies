@@ -41,6 +41,8 @@ target 'ELMovie' do
 
   pod 'RCTYouTube', :path => '../node_modules/react-native-youtube'
 
+  pod 'RNToasty', :path => '../node_modules/react-native-toasty'
+
   target 'ELMovieTests' do
     inherit! :search_paths
     # Pods for testing

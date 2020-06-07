@@ -16,18 +16,19 @@ import ActorComp from "../../components/Actor/ActorComp";
 import Image from "react-native-image-progress";
 import * as Progress from "react-native-progress";
 import Carousel from "react-native-snap-carousel";
-import {YouTubeStandaloneAndroid} from 'react-native-youtube'
- 
+import {YouTubeStandaloneAndroid} from 'react-native-youtube'; 
+import { addMovieToWatchList} from '../../actions/watchList'; 
+import {connect} from 'react-redux'; 
 const { width: Width, height: Height } = Dimensions.get("window");
 
 
 
-export default class Movie extends Component {
+ class Movie extends Component {
   constructor(props) {
     super(props);
     this.state = {
       movie: this.props.navigation.getParam("movie"),
-      movieInFav: false,
+      movieInList: false,
       actors: [],
       noCastAvailable: false, 
       trailerID:""
@@ -37,7 +38,7 @@ export default class Movie extends Component {
   componentDidMount = async () => {
     let m = await this.existInFav(this.state.movie);
     this.setState({
-      movieInFav: m
+      movieInList: m
     });
     this.getActors().then(() => this.getTrailerID())
   };
@@ -117,7 +118,7 @@ export default class Movie extends Component {
             AsyncStorage.setItem("favMoviesList", JSON.stringify(res));
             alert("Movie Added to your Favourit Successfully");
             this.setState({
-              movieInFav: true
+              movieInList: true
             });
           } else {
             alert("Sorry but this movie is already in your Fav List");
@@ -180,6 +181,14 @@ export default class Movie extends Component {
     }
   }
 
+   // add movie to favourits
+   addToList = async movie => {
+      this.setState({
+              movieInList: true
+            });
+       this.props.addMovieToWatchList(movie)     
+  
+  };
 
 
 
@@ -204,35 +213,7 @@ export default class Movie extends Component {
           </View>
           <View style={styles.movieDataView}>
             <View style={{ flexDirection: "row" }}>
-              {/* <Left>
-              <View style={styles.moviePosterView}>
-                <Image
-                  style={styles.moviePoster}
-                  source={
-                    this.state.movie.backdrop_path ||
-                    this.state.movie.poster_path
-                      ? {
-                          uri: this.state.movie.backdrop_path
-                            ? "https://image.tmdb.org/t/p/original/" +
-                              this.state.movie.backdrop_path
-                            : "https://image.tmdb.org/t/p/original/" +
-                              this.state.movie.poster_path
-                        }
-                      : require("../../../assets/images/defaultMovie.jpg")
-                  }
-                  imageStyle={styles.moviePoster}
-                  indicator={Progress.Bar}
-                  indicatorProps={{
-                    borderWidth: 0,
-                    color: mainColor,
-                    unfilledColor: "rgba(200, 200, 200, 0.2)"
-                  }}
-                  resizeMode={
-                    this.state.movie.backdrop_path ? "cover" : "contain"
-                  }
-                />
-              </View>
-            </Left> */}
+            
               <Right style={styles.playIcon}>
                 <TouchableOpacity
                   onPress={this.playTrailer}
@@ -262,27 +243,32 @@ export default class Movie extends Component {
                     {this.state.movie.vote_average}/10
                   </Text>
                 </View>
-                <View style={styles.iconCont}>
-                  <Icon
-                    name="eye"
-                    style={[styles.Icon, { color: "#0e95ad" }]}
-                  />
-                  <Text style={{ color: "#0e95ad", fontWeight: "bold" }}>
-                    {this.state.movie.popularity}
-                  </Text>
-                </View>
+             
                 <View style={styles.iconCont}>
                   <TouchableOpacity onPress={this.onShare}>
                     <Icon
                       name="share"
                       style={[
                         styles.Icon,
-                        { color: "#db120b", alignSelf: "center" }
+                        { color: "#0e95ad", alignSelf: "center" }
                       ]}
                     />
-                    <Text style={{ color: "#db120b" }}>Share Poster</Text>
+                    <Text style={{ color: "#0e95ad" }}>Share Poster</Text>
                   </TouchableOpacity>
                 </View>
+                <View style={styles.iconCont}>
+                <TouchableOpacity onPress={this.addToList}>
+                  <Icon
+                    name={this.state.movieInList ? "playlist-check" : "playlist-plus"}
+                    style={[
+                      styles.Icon,
+                      { color: "#db120b", alignSelf: "center" }
+                    ]}
+                    type="MaterialCommunityIcons"
+                  />
+                  <Text style={{ color: "#db120b" }}>{this.state.movieInList ? "Added to List" : "Add to List"}</Text>
+                </TouchableOpacity>
+              </View>
               </View>
               <View>
                 <Text style={styles.headLine}>Overview</Text>
@@ -317,3 +303,7 @@ export default class Movie extends Component {
     );
   }
 }
+const mapStateToProps = state => ({
+
+})
+export default connect (mapStateToProps,{addMovieToWatchList})(Movie)

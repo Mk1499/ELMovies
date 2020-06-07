@@ -28,8 +28,8 @@ export default styles = StyleSheet.create({
     borderColor: "#fff"
   },
   logoImg: {
-    width: 0.2 * width,
-    height: 0.2 * width,
+    width: 0.3 * width,
+    height: 0.3 * width,
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
@@ -43,7 +43,7 @@ export default styles = StyleSheet.create({
   appName: {
     color: "#eee",
     // fontWeight: "bold",
-    fontSize: 0.09 * width,
+    fontSize: 0.11 * width,
     width: 0.4 * width,
     fontFamily: "Oswald"
   },

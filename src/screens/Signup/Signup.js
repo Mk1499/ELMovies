@@ -9,14 +9,14 @@ import {
 } from "react-native";
 import styles from "./signUpStyle";
 import { WEB_CLIENT_ID } from "../../configs/keys";
-import {customBaseUrl} from '../../configs/global'; 
+import { customBaseUrl } from "../../configs/global";
 import {
   GoogleSignin,
   GoogleSigninButton,
   statusCodes
 } from "@react-native-community/google-signin";
 import { connect } from "react-redux";
-import { googleLogin, signUp } from "../../actions/auth";
+import { googleLogin, signUp , loadingFun } from "../../actions/auth";
 import BG from "../../../assets/images/bg.jpg";
 import { Form, Input, Item } from "native-base";
 import Btn from "../../components/Button/Button";
@@ -28,11 +28,11 @@ class Signup extends Component {
     super(props);
     this.state = {
       textWidth: new Animated.Value(0),
-      logoOpacity: new Animated.Value(0.5), 
-      email:"",
-      fullname:"",
-      password1:"",
-      password2:""
+      logoOpacity: new Animated.Value(0.5),
+      email: "",
+      fullname: "",
+      password1: "",
+      password2: ""
     };
   }
 
@@ -81,16 +81,20 @@ class Signup extends Component {
     this.setState({ currentUser });
   };
 
-  signUp = async() => {
+  signUp = async () => {
     console.log("Sign Up...");
-    
-    let msg = {
-      "fullName":this.state.fullname,
-      "email": this.state.email, 
-      "phone":"01121858581", 
-      "password":this.state.password1
-    };   
-   this.props.signUp(msg)
+    if (this.state.password1 === this.state.password2) {
+      let msg = {
+        fullName: this.state.fullname,
+        email: this.state.email,
+        phone: "01121858581",
+        password: this.state.password1
+      };
+      await this.props.signUp(msg);
+    } else {
+      this.props.loadingFun(false);
+      alert("Sorry but two passwords must be the same");
+    }
   };
 
   render() {
@@ -111,15 +115,17 @@ class Signup extends Component {
               <Text style={styles.appName}>Movie Lab</Text>
             </Animated.View>
           </View>
-          <Form style={styles.form}>
+          <Form style={styles.form} >
             <Item>
               <Input
                 placeholder="Full Name"
                 style={styles.input}
                 placeholderTextColor="#eee"
-                onChangeText={name => this.setState({
-                  fullname:name
-                })}
+                onChangeText={name =>
+                  this.setState({
+                    fullname: name
+                  })
+                }
               />
             </Item>
             <Item>
@@ -127,9 +133,11 @@ class Signup extends Component {
                 placeholder="Email"
                 style={styles.input}
                 placeholderTextColor="#eee"
-                onChangeText={email => this.setState({
-                  email
-                })}
+                onChangeText={email =>
+                  this.setState({
+                    email
+                  })
+                }
               />
             </Item>
             <Item>
@@ -140,8 +148,9 @@ class Signup extends Component {
                 onChangeText={password1 => {
                   this.setState({
                     password1
-                  })
+                  });
                 }}
+                secureTextEntry={true}
               />
             </Item>
             <Item last>
@@ -152,8 +161,9 @@ class Signup extends Component {
                 onChangeText={password2 => {
                   this.setState({
                     password2
-                  })
+                  });
                 }}
+                secureTextEntry={true}
               />
             </Item>
             <Btn title="Sign Up" action={this.signUp} />
@@ -173,7 +183,7 @@ class Signup extends Component {
 }
 
 const mapStateToProps = state => ({
-  userInfo: state.auth.userInfo
+  userInfo: state.auth.userInfo,
 });
 
-export default connect(mapStateToProps, { googleLogin,signUp })(Signup);
+export default connect(mapStateToProps, { googleLogin, signUp , loadingFun})(Signup);

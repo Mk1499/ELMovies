@@ -769,6 +769,7 @@ color common_google_signin_btn_text_light_disabled
 color common_google_signin_btn_text_light_focused
 color common_google_signin_btn_text_light_pressed
 color common_google_signin_btn_tint
+color defaultTextColor
 color design_bottom_navigation_shadow_color
 color design_box_stroke_color
 color design_dark_default_color_background
@@ -811,12 +812,14 @@ color dim_foreground_disabled_material_dark
 color dim_foreground_disabled_material_light
 color dim_foreground_material_dark
 color dim_foreground_material_light
+color errorColor
 color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color infoColor
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -890,6 +893,7 @@ color mtrl_textinput_disabled_color
 color mtrl_textinput_filled_box_default_background_color
 color mtrl_textinput_focused_box_stroke_color
 color mtrl_textinput_hovered_box_stroke_color
+color normalColor
 color notification_action_color_filter
 color notification_icon_bg_color
 color primary_dark
@@ -908,6 +912,7 @@ color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
 color splashscreen_bg
+color successColor
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
 color switch_thumb_material_dark
@@ -918,6 +923,7 @@ color test_mtrl_calendar_day
 color test_mtrl_calendar_day_selected
 color tooltip_background_dark
 color tooltip_background_light
+color warningColor
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
 dimen abc_action_bar_default_height_material
@@ -1369,8 +1375,12 @@ drawable design_snackbar_background
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_calendar_black_24dp
+drawable ic_check_white_24dp
 drawable ic_clear_black_24dp
+drawable ic_clear_white_24dp
 drawable ic_edit_black_24dp
+drawable ic_error_outline_white_24dp
+drawable ic_info_outline_white_24dp
 drawable ic_keyboard_arrow_left_black_24dp
 drawable ic_keyboard_arrow_right_black_24dp
 drawable ic_menu_arrow_down_black_24dp
@@ -1403,6 +1413,7 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable redbox_top_border_background
 drawable test_custom_background
+drawable toast_frame
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 id ALT
@@ -1701,6 +1712,9 @@ id time
 id title
 id titleDividerNoCustom
 id title_template
+id toast_icon
+id toast_root
+id toast_text
 id top
 id topPanel
 id touch_outside
@@ -1857,6 +1871,7 @@ layout text_view_with_line_height_from_layout
 layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
+layout toast_layout
 layout youtube_layout
 mipmap ic_launcher
 mipmap ic_launcher2
@@ -2041,6 +2056,7 @@ string status_bar_notification_info_overflow
 string summary_description
 string tablist_description
 string timer_description
+string toast_message
 string toolbar_description
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light

@@ -1,26 +1,39 @@
 import React, { Component } from "react";
-import { Text, View, TouchableOpacity,ActivityIndicator } from "react-native";
+import { Text, View, TouchableOpacity, ActivityIndicator } from "react-native";
 import { mainColor } from "../../configs/global";
 import styles from "./style";
+import { connect } from "react-redux";
+import {loadingFun} from '../../actions/auth'; 
 
-export default class Button extends Component {
-
-  constructor(props){
-    super(props); 
+class Button extends Component {
+  constructor(props) {
+    super(props);
     this.state = {
-      loading:false 
-    }
+      loading: false
+    };
+    
   }
+
   render() {
     return (
-      <TouchableOpacity onPress={()=>{
-        this.props.action}} style={styles.btn}>
-        {this.state.loading ? 
-        <ActivityIndicator />  
-      : 
-        <Text style={styles.btnText}>{this.props.title}</Text>
-      }
+      <TouchableOpacity
+        onPress={() => {
+          this.props.action();
+          this.props.loadingFun();
+        }}
+        style={styles.btn}
+      >
+        {this.props.loading ? (
+          <ActivityIndicator size={"large"} color={"#fff"} />
+        ) : (
+          <Text style={styles.btnText}>{this.props.title}</Text>
+        )}
       </TouchableOpacity>
     );
   }
 }
+const mapStateToProps = state => ({
+  loading: state.auth.loading
+});
+
+export default connect(mapStateToProps, {loadingFun})(Button);

@@ -11,5 +11,4 @@ export default combineReducers({
     movies: movieReducer,
     series: seriesReducer, 
     actors: actorReducer
-
 })
