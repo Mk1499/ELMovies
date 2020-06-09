@@ -48,9 +48,9 @@ export const animatedImageHeight = animation.y.interpolate({
     },
     sectionTitle: {
       fontSize: 0.06 * width,
-      fontWeight: "bold",
       marginBottom: 0.03 * height,
-      color: mainColor
+      color: mainColor,
+      fontFamily:"Roboto"
     },
     iconMainView: {
       width: 0.45 * width,

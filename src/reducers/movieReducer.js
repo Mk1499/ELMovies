@@ -1,11 +1,12 @@
-import { SETPLAYING, SETPOPULAR, SETFAVOURITE } from "../actions/types";
+import { SETPLAYING, SETPOPULAR, SETMOVIEWL, SETSeariesWL,ADDTOMOVIEWL } from "../actions/types";
 
 const INITIAL_STATE = {
   popularMovies: [],
   popularMoviesDone: false,
   nowPlayingMovies: [],
   nowPlayingMoviesDone: false,
-  favouriteMovies: []
+  movieWL: [], 
+  loadList:false
 };
 
 const movies = (state = INITIAL_STATE, action) => {
@@ -22,11 +23,7 @@ const movies = (state = INITIAL_STATE, action) => {
         nowPlayingMovies: action.payload,
         nowPlayingMoviesDone: true
       };
-    case SETFAVOURITE:
-      return {
-        ...state,
-        favouriteMovies: action.payload
-      };
+
     default:
       return state;
   }

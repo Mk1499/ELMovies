@@ -20,6 +20,7 @@ import {YouTubeStandaloneAndroid} from 'react-native-youtube';
 import { addMovieToWatchList} from '../../actions/watchList'; 
 import {connect} from 'react-redux'; 
 const { width: Width, height: Height } = Dimensions.get("window");
+import { RNToasty } from 'react-native-toasty';
 
 
 
@@ -116,18 +117,26 @@ const { width: Width, height: Height } = Dimensions.get("window");
           if (!(await this.existInFav(movie))) {
             res.push(movie);
             AsyncStorage.setItem("favMoviesList", JSON.stringify(res));
-            alert("Movie Added to your Favourit Successfully");
+            RNToasty.Success({
+              title:"Movie Added to your Favourit Successfully"
+            })
             this.setState({
               movieInList: true
             });
           } else {
-            alert("Sorry but this movie is already in your Fav List");
+            RNToasty.Error({
+              title:"Sorry but this movie is already in your Fav List"
+            })
           }
         })
-        .catch(err => alert(err));
+        .catch(err => RNToasty.Error({
+          title:err
+        }));
     } catch (error) {
       // Error saving data
-      alert(error);
+      RNToasty.Error({
+        title:error
+      })
     }
   };
 
@@ -157,7 +166,9 @@ const { width: Width, height: Height } = Dimensions.get("window");
         // dismissed
       }
     } catch (error) {
-      alert(error.message);
+      RNToasty.Error({
+        title: error.message
+      })
     }
   };
 
@@ -177,16 +188,18 @@ const { width: Width, height: Height } = Dimensions.get("window");
       .then(() => console.log('Standalone Player Exited'))
       .catch(errorMessage => console.error(errorMessage));
     }else {
-      alert("Sorry But This movie trailer unavailble")
+      RNToasty.Error({
+        title:"Sorry But This movie trailer unavailble"
+      })
     }
   }
 
    // add movie to favourits
-   addToList = async movie => {
+   addToList = async () => {
       this.setState({
               movieInList: true
             });
-       this.props.addMovieToWatchList(movie)     
+       this.props.addMovieToWatchList(this.state.movie,"movie");    
   
   };
 

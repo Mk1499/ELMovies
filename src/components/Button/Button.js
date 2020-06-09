@@ -19,7 +19,7 @@ class Button extends Component {
       <TouchableOpacity
         onPress={() => {
           this.props.action();
-          this.props.loadingFun();
+          this.props.loadingFun(true);
         }}
         style={styles.btn}
       >

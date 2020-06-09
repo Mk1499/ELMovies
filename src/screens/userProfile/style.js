@@ -79,6 +79,12 @@ export default styles = StyleSheet.create({
     marginTop:0.1*height,
     marginBottom:0.1*height,
     marginLeft:0.04*width,
+  } ,
+  emptyMsg:{
+    textAlign:"center",
+    color:textColor,
+    fontFamily:"Lato-Light",
+    fontSize:0.05*width
   }
 
 });

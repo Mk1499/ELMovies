@@ -22,5 +22,9 @@ export const SETACTORSEARCH = "SETACTORSEARCH";
 export const SEARCHING = "SEARCHING";
 
 // Watch List
-export const SETMOVIEWL = "SETMOVIEWL"; 
+export const SETWL = "SETWL"; 
+export const ADDTOMOVIEWL = "ADDTOMOVIEWL"; 
+
 export const SETSeariesWL = "SETSeariesWL"; 
+export const ADDSeariesWL = "ADDSeariesWL"; 
+

@@ -15,6 +15,7 @@ import BigMovie from "../../components/BigMovie/BigMovie";
 import { apiKey, baseUrl } from "../../configs/global";
 import { connect } from "react-redux";
 import { styles } from "./style";
+import { RNToasty } from 'react-native-toasty';
 
 // import External Style
 import commStyle from "../commStyle";
@@ -102,15 +103,27 @@ class SearchRes extends Component {
           if (!(await this.existInFav(movie))) {
             res.push(movie);
             AsyncStorage.setItem("favMoviesList", JSON.stringify(res));
-            alert("Movie Added to your Favourit Successfully");
+            RNToasty.Success({
+              title:"Movie Added to your Favourit Successfully"
+            })
+            
           } else {
-            alert("Sorry but this movie is already in your Fav List");
+            RNToasty.Error({
+              title:"Sorry but this movie is already in your Fav List"
+            })
           }
         })
-        .catch(err => alert(err));
+        .catch(err =>
+            RNToasty.Error({
+              title:err
+            })
+          );
     } catch (error) {
       // Error saving data
-      alert(error);
+      // alert(error);
+      RNToasty.Error({
+        title:error
+      })
     }
   };
 

@@ -23,7 +23,7 @@ export const googleLogin = () => async dispatch => {
       type: SETUSERDATA,
       payload: userInfo
     });
-    await AsyncStorage.setItem("MLuserData", JSON.stringify(userInfo.user))
+    await AsyncStorage.setItem("MLuserInfo", JSON.stringify(userInfo.user))
     console.log("User Info : ", userInfo);
   } catch (error) {
     console.log("error : ", error.code);
@@ -56,7 +56,7 @@ export const googleLogout = () => async dispatch =>  {
         type: SETUSERDATA,
         payload: {}
       });
-      await AsyncStorage.setItem("MLuserData","")
+      await AsyncStorage.setItem("MLuserInfo","")
   } catch (error) {
     console.error("Google Logout Error : ", error);
   }
@@ -118,7 +118,7 @@ export const signUp = msg => async dispatch => {
         throw res.error; 
       } else {
         console.log("user created : ", res);
-        AsyncStorage.setItem("MLuserData",res); 
+        AsyncStorage.setItem("MLuserInfo",JSON.stringify(res)); 
 
         dispatch({
           type: SETUSERDATA,
@@ -140,7 +140,7 @@ export const signUp = msg => async dispatch => {
 export const checkUser = (userData={}) => async dispatch => {
   const isSignedIn = await GoogleSignin.isSignedIn();
   const currentUser = await GoogleSignin.getCurrentUser();
-  const localUserData = await AsyncStorage.getItem("MLuserData"); 
+  const localUserData = await AsyncStorage.getItem("MLuserInfo"); 
 
   console.log("google Sign : ", isSignedIn);
   console.log("local Sign : ", localUserData);
@@ -148,7 +148,7 @@ export const checkUser = (userData={}) => async dispatch => {
   
   if (isSignedIn || localUserData){
     Navigation.navigate("Home");
-    let userData = await AsyncStorage.getItem("MLuserData")
+    let userData = await AsyncStorage.getItem("MLuserInfo")
     dispatch({
       type:SETUSERDATA,
       payload:JSON.parse(userData)
@@ -158,7 +158,10 @@ export const checkUser = (userData={}) => async dispatch => {
   }
 }
 
-export const loadingFun = (loading=true)=> async dispatch => {
+export const loadingFun = (loading)=> async dispatch => {
+
+console.log("loading : ", loading);
+
   dispatch({
     type:LOADING,
     payload:loading

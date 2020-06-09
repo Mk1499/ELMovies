@@ -227,7 +227,7 @@ export default class ActorProfile extends Component {
                   marginTop: 0.05 * height
                 }}
               >
-                <Text style={styles.sectionTitle}>Series</Text>
+                <Text style={styles.sectionTitle}>Series & TV Shows</Text>
                 <FlatList
                   horizontal={true}
                   data={this.state.series}

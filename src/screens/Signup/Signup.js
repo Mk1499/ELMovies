@@ -20,6 +20,7 @@ import { googleLogin, signUp , loadingFun } from "../../actions/auth";
 import BG from "../../../assets/images/bg.jpg";
 import { Form, Input, Item } from "native-base";
 import Btn from "../../components/Button/Button";
+import { RNToasty } from 'react-native-toasty';
 
 const { width: Width } = Dimensions.get("window");
 
@@ -84,6 +85,8 @@ class Signup extends Component {
   signUp = async () => {
     console.log("Sign Up...");
     if (this.state.password1 === this.state.password2) {
+      this.props.loadingFun(true);
+     
       let msg = {
         fullName: this.state.fullname,
         email: this.state.email,
@@ -93,7 +96,10 @@ class Signup extends Component {
       await this.props.signUp(msg);
     } else {
       this.props.loadingFun(false);
-      alert("Sorry but two passwords must be the same");
+
+      RNToasty.Error({
+        title:"Sorry but two passwords must be the same"
+      })
     }
   };
 
@@ -118,7 +124,7 @@ class Signup extends Component {
           <Form style={styles.form} >
             <Item>
               <Input
-                placeholder="Full Name"
+                placeholder="User Name"
                 style={styles.input}
                 placeholderTextColor="#eee"
                 onChangeText={name =>

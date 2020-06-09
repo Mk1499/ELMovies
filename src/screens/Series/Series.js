@@ -16,11 +16,14 @@ import ActorComp from "../../components/Actor/ActorComp";
 import Image from "react-native-image-progress";
 import * as Progress from "react-native-progress";
 import Carousel from "react-native-snap-carousel";
-import {YouTubeStandaloneAndroid} from 'react-native-youtube'
+import {YouTubeStandaloneAndroid} from 'react-native-youtube';
+import { RNToasty } from 'react-native-toasty';
+import { addMovieToWatchList} from '../../actions/watchList'; 
+import {connect} from "react-redux"; 
 
 const { width: Width, height: Height } = Dimensions.get("window");
 
-export default class Series extends Component {
+class Series extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -91,29 +94,14 @@ export default class Series extends Component {
   };
 
   // add series to favourits
-  addToList = async series => {
-    try {
-      AsyncStorage.getItem("favSeriesList")
-        .then(res => JSON.parse(res))
-        .then(async res => {
-          //console.log("RES", await this.existInFav(series));
-          if (!(await this.existInFav(series))) {
-            res.push(series);
-            AsyncStorage.setItem("favSeriesList", JSON.stringify(res));
-            alert("Series Added to your Favourit Successfully");
-            this.setState({
-              seriesInList: true
-            });
-          } else {
-            alert("Sorry but this series is already in your Fav List");
-          }
-        })
-        .catch(err => alert(err));
-    } catch (error) {
-      // Error saving data
-      alert(error);
-    }
-  };
+  // add movie to favourits
+  addToList = async () => {
+    this.setState({
+            seriesInList: true
+          });
+     this.props.addMovieToWatchList(this.state.series,"series");    
+
+};
 
   // Share Path of series poster
   onShare = async () => {
@@ -143,7 +131,10 @@ export default class Series extends Component {
         // dismissed
       }
     } catch (error) {
-      alert(error.message);
+      RNToasty.Error({
+        title:error.message
+      })
+      // alert(error.message);
     }
   };
 
@@ -172,7 +163,9 @@ export default class Series extends Component {
       .then(() => console.log('Standalone Player Exited'))
       .catch(errorMessage => console.error(errorMessage));
     }else {
-      alert("Sorry But This movie trailer unavailble")
+      RNToasty.Error({
+        title:"Sorry But This movie trailer unavailble"
+      })
     }
   }
   render() {
@@ -305,3 +298,9 @@ export default class Series extends Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+
+}); 
+
+export default connect(mapStateToProps,{addMovieToWatchList})(Series);

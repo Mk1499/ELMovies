@@ -21,6 +21,8 @@ import BG from "../../../assets/images/bg.jpg";
 import { Form, Input, Item } from "native-base";
 import Btn from "../../components/Button/Button";
 import { Easing } from "react-native-reanimated";
+import { RNToasty } from 'react-native-toasty';
+
 
 const { width: Width , height:Height} = Dimensions.get("window");
 
@@ -93,6 +95,7 @@ class Login extends Component {
   signIn = async () => {
     // this.props.navigation.replace("Home")
     if (this.state.email && this.state.password) {
+      this.props.loadingFun(true)
       let email = this.state.email.toLowerCase();
       let pw = this.state.password.toLowerCase();
 
@@ -103,7 +106,9 @@ class Login extends Component {
       await this.props.signIn(msg).catch(err => console.log(("error: ", err)));
     } else {
       this.props.loadingFun(false)
-      alert("Sorry but email and password must be Entered")
+      RNToasty.Error({
+        title:"Sorry but email and password must be Entered"
+      })
     }
   };
 

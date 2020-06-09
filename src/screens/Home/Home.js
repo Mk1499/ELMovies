@@ -15,8 +15,7 @@ import {styles} from './style'
 import { connect } from "react-redux";
 import SplashScreen from "react-native-splash-screen";
 import Carousel from 'react-native-snap-carousel';
-
-
+import { RNToasty } from 'react-native-toasty'; 
 import {
   getNowPlayingMovies,
   getPopularMovies,
@@ -61,7 +60,9 @@ class Home extends Component {
       this.props.navigation.navigate("SearchRes", {
         movieName: this.state.searchMovie
       });
-    else alert("Please Write Movie name");
+    else RNToasty.Error({
+      title:"Please Write Movie name"
+    }) 
   };
 
   // Movie Pressed

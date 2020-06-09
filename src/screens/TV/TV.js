@@ -11,6 +11,7 @@ import {
 } from "react-native";
 import { Container, Item, Form, Input, Label, Icon, Left } from "native-base";
 import {styles} from '../Home/style'
+import { RNToasty } from 'react-native-toasty';
 
 import { connect } from "react-redux";
 import SplashScreen from "react-native-splash-screen";
@@ -60,7 +61,10 @@ class TV extends Component {
       this.props.navigation.navigate("SearchSeriesRes", {
         seriesName: this.state.searchSeries
       });
-    else alert("Please Write Series name");
+      else 
+      RNToasty.Error({
+        title:"Please Write Series name"
+      })
   };
 
   // Series Pressed
