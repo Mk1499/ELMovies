@@ -108,7 +108,7 @@ class userProfile extends Component {
 
   // Series Pressed
   gotoSeriesScreen = series => {
-    this.props.navigation.navigate("Series", { series });
+    this.props.navigation.navigate("Series", {series: {...series, id : series.mediaid,name:series.title,first_air_date:series.release_date} });
   };
   renderSmallSeries = (series, index) => {
     // console.log("Mov : ", series);

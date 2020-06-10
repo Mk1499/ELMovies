@@ -37,12 +37,24 @@ import { RNToasty } from 'react-native-toasty';
   }
 
   componentDidMount = async () => {
-    let m = await this.existInFav(this.state.movie);
-    this.setState({
-      movieInList: m
-    });
-    this.getActors().then(() => this.getTrailerID())
+    // let m = await this.existInFav(this.state.movie);
+    // this.setState({
+    //   movieInList: m
+    // });
+    this.getActors().then(()=>this.checkMovInWL()).then(() => this.getTrailerID())
   };
+
+  checkMovInWL = ()=> {
+    console.log("Movies WL : ", this.props.moviesWL);
+    this.props.moviesWL.map( m => {
+      if (m.mediaid === this.state.movie.id){
+        this.setState({
+          movieInList:true
+        })
+        
+      }
+    })
+  }
 
   getActors = async () => {
     await fetch(
@@ -96,49 +108,7 @@ import { RNToasty } from 'react-native-toasty';
     );
   };
 
-  //check if movies in Fav List
-  existInFav = async movie => {
-    let stringList = await AsyncStorage.getItem("favMoviesList");
-    let list = JSON.parse(stringList);
 
-    for (let i = 0; i < list.length; i++) {
-      if (JSON.stringify(movie) === JSON.stringify(list[i])) return true;
-    }
-    return false;
-  };
-
-  // add movie to favourits
-  addToFav = async movie => {
-    try {
-      AsyncStorage.getItem("favMoviesList")
-        .then(res => JSON.parse(res))
-        .then(async res => {
-          //console.log("RES", await this.existInFav(movie));
-          if (!(await this.existInFav(movie))) {
-            res.push(movie);
-            AsyncStorage.setItem("favMoviesList", JSON.stringify(res));
-            RNToasty.Success({
-              title:"Movie Added to your Favourit Successfully"
-            })
-            this.setState({
-              movieInList: true
-            });
-          } else {
-            RNToasty.Error({
-              title:"Sorry but this movie is already in your Fav List"
-            })
-          }
-        })
-        .catch(err => RNToasty.Error({
-          title:err
-        }));
-    } catch (error) {
-      // Error saving data
-      RNToasty.Error({
-        title:error
-      })
-    }
-  };
 
   // Share Path of movie poster
   onShare = async () => {
@@ -317,6 +287,6 @@ import { RNToasty } from 'react-native-toasty';
   }
 }
 const mapStateToProps = state => ({
-
+  moviesWL : state.wlist.movieWL
 })
 export default connect (mapStateToProps,{addMovieToWatchList})(Movie)

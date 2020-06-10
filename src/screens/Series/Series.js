@@ -37,12 +37,23 @@ class Series extends Component {
   }
 
   componentDidMount = async () => {
-    let m = await this.existInFav(this.state.series);
-    this.setState({
-      seriesInList: m
-    });
-    this.getActors().then(()=>this.getTrailerID())
+
+    this.getActors().then(()=>this.checkSerInWL()).then(()=>this.getTrailerID())
   };
+
+
+  checkSerInWL = ()=> {
+    console.log("Movies WL : ", this.props.seriesWL);
+    this.props.seriesWL.map( m => {
+      if (m.mediaid === this.state.series.id){
+        this.setState({
+          seriesInList:true
+        })
+        
+      }
+    })
+  }
+
 
   getActors = async () => {
     await fetch(
@@ -300,6 +311,7 @@ class Series extends Component {
 }
 
 const mapStateToProps = state => ({
+  seriesWL : state.wlist.seriesWL
 
 }); 
 

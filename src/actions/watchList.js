@@ -3,14 +3,20 @@ import { SETWL, ADDTOMOVIEWL, ADDSeariesWL } from "./types";
 import { AsyncStorage } from "react-native";
 import { RNToasty } from "react-native-toasty";
 
-export const addMovieToWatchList = (movie, type) => async dispatch => {
+export const addMovieToWatchList = (media, type) => async dispatch => {
   let userToken = JSON.parse(await AsyncStorage.getItem("MLuserInfo")).token;
   let bearerToken = "Bearer " + userToken;
+  
+  if (type === "series"){
+    media.title = media.name; 
+    media.release_date = media.first_air_date; 
+
+  }
 
   console.log("UToken : ", userToken);
   let msg = {
     type,
-    ...movie
+    ...media
   };
 
   msg["mediaid"] = msg.id;
@@ -37,7 +43,7 @@ export const addMovieToWatchList = (movie, type) => async dispatch => {
           title: "Added To Your List"
         });
       }
-      if (type === "movies") {
+      if (type === "movie") {
         dispatch({
           type: ADDTOMOVIEWL,
           payload: msg
