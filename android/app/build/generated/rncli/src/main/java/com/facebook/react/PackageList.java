@@ -18,6 +18,8 @@ import com.mk14.movielab.R;
 import com.reactnativecommunity.art.ARTPackage;
 // @react-native-community/google-signin
 import co.apptailor.googlesignin.RNGoogleSigninPackage;
+// react-native-document-picker
+import io.github.elyx0.reactnativedocumentpicker.DocumentPickerPackage;
 // react-native-gesture-handler
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 // react-native-linear-gradient
@@ -83,6 +85,7 @@ public class PackageList {
       new MainReactPackage(mConfig),
       new ARTPackage(),
       new RNGoogleSigninPackage(),
+      new DocumentPickerPackage(),
       new RNGestureHandlerPackage(),
       new LinearGradientPackage(),
       new ReanimatedPackage(),

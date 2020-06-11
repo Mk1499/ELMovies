@@ -147,14 +147,14 @@ export const checkUser = (userData={}) => async dispatch => {
   
   
   if (isSignedIn || localUserData){
-    Navigation.navigate("Home");
+    Navigation.replace("Home");
     let userData = await AsyncStorage.getItem("MLuserInfo")
     dispatch({
       type:SETUSERDATA,
       payload:JSON.parse(userData)
     })
   } else {
-    Navigation.navigate("Login");
+    Navigation.replace("Login");
   }
 }
 

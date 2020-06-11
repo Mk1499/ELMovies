@@ -9,6 +9,8 @@ import BG from "../../../assets/images/bg.jpg";
 import { Form, Input, Item } from "native-base";
 import Btn from "../../components/Button/Button";
 import {WEB_CLIENT_ID} from '../../configs/keys'; 
+import { Easing } from "react-native-reanimated";
+
 
 const {width:Width} = Dimensions.get("window"); 
 
@@ -18,6 +20,7 @@ class Splash extends Component {
     this.state = {
       textWidth: new Animated.Value(0),
       logoOpacity: new Animated.Value(0.5),
+      logoTransform: new Animated.Value(0),
       email:"MKe@mail.com",
       password:"123456789"
     };
@@ -29,11 +32,21 @@ class Splash extends Component {
     });
     this.animatedWidth();
     this.animatedOpacity();
+    this.logoRotation();
+
     setTimeout(()=> {
 
         this.props.checkUser(); 
     }, 1700)
   }
+
+  logoRotation = () => {
+    Animated.timing(this.state.logoTransform, {
+      toValue: 1,
+      duration: 1600,
+      easing: Easing.linear
+    }).start();
+  };
 
   animatedWidth = () => {
     Animated.timing(this.state.textWidth, {
@@ -74,11 +87,18 @@ class Splash extends Component {
 
 
   render() {
+    let rotation = this.state.logoTransform.interpolate({
+      inputRange: [0, 1],
+      outputRange: ["0deg", "360deg"] // degree of rotation
+    });
     return (
       <ImageBackground source={BG} style={styles.containerBG}>
         <View style={styles.container}>
           <View style={styles.LogoContainer}>
-            <Animated.View style={{ opacity: this.state.logoOpacity }}>
+            <Animated.View style={{ 
+              opacity: this.state.logoOpacity,
+              transform: [{ rotate: rotation }]
+              }}>
               <Image
                 style={[styles.logoImg]}
                 source={require("../../../assets/images/logo2.png")}
