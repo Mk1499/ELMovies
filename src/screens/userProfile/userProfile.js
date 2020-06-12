@@ -24,8 +24,9 @@ import { googleLogout } from "../../actions/auth";
 import { mainColor, textColor, bgColor } from "../../configs/global";
 import SmallMovie from "../../components/SmallMovie/SmallMovie";
 import Carousel from "react-native-snap-carousel";
-import {getList} from '../../actions/watchList';
+import { getList } from "../../actions/watchList";
 const { width: Width, height: Height } = Dimensions.get("window");
+import DocumentPicker from "react-native-document-picker";
 
 class userProfile extends Component {
   constructor(props) {
@@ -35,18 +36,19 @@ class userProfile extends Component {
       darkMode: true,
       loadList: this.props.loadList,
       moviesList: [],
-      seriesList: []
+      seriesList: [],
+      userImg: ""
     };
   }
 
-  componentDidMount = async() => {
-   await this.props.getList();
+  componentDidMount = async () => {
+    await this.props.getList();
     console.log("P : ", this.props.moviesList);
-    
+
     // this.props.navigation.addListener("didFocus", async () => {
-      
+
     // });
-  }
+  };
 
   logOut = async () => {
     const isSignedIn = await GoogleSignin.isSignedIn();
@@ -78,37 +80,65 @@ class userProfile extends Component {
     this.props.navigation.navigate("Movie", { movie });
   };
 
-  // getList = async () => {
-  //   let userDataStr = await AsyncStorage.getItem("MLuserInfo");
-  //   let token = JSON.parse(userDataStr).token;
-  //   let bearerToken = 'Bearer ' + token;
-  //   console.log("Token : ",token );
+  updateImg = async () => {
+    // Pick a single file
+    let userToken = JSON.parse(await AsyncStorage.getItem("MLuserInfo")).token;
+    let bearerToken = "Bearer " + userToken;
+    let formData = new FormData();
 
-  //   await fetch(`${customBaseUrl}/list`, {
-  //     method: 'GET',
-  //     withCredentials: true,
-  //     credentials: 'include',
-  //     headers: {
-  //         'Authorization': bearerToken,
-  //         'Content-Type': 'application/json'
-  //     }
-  // }).then(res => res.json())
-  // .then(resJson => {
-  //   console.log('RES : ',resJson);
+    try {
+      const res = await DocumentPicker.pick({
+        type: [DocumentPicker.types.images]
+      });
+      console.log(
+        res.uri,
+        res.type, // mime type
+        res.name,
+        res.size
+      );
 
-  //   this.setState({
-  //     moviesList:resJson.movies,
-  //     seriesList: resJson.series,
-  //     loadList:true
-  //   })
-  // })
-  // .catch(error => console.log(error)
-  // );
-  // }
+      formData.append("new-image", res);
+console.log("FD : ",formData);
+
+      await fetch(`${customBaseUrl}/users/updateimg`, {
+        method: "POST",
+        mode: "cors",
+        headers: {
+          "Content-Type": "multipart/form-data",
+          Authorization: bearerToken
+        },
+        body: formData
+      })
+        .then(res => {
+          console.log("EEEE : ",res);
+          
+          return res.json()})
+        .then(res => {
+          console.log("res : ", res);
+        })
+        .catch(err => console.log("upload err: ", err));
+      this.setState({
+        userImg: res.uri
+      });
+    } catch (err) {
+      if (DocumentPicker.isCancel(err)) {
+        // User cancelled the picker, exit any dialogs or menus and move on
+      } else {
+        throw err;
+      }
+    }
+  };
 
   // Series Pressed
   gotoSeriesScreen = series => {
-    this.props.navigation.navigate("Series", {series: {...series, id : series.mediaid,name:series.title,first_air_date:series.release_date} });
+    this.props.navigation.navigate("Series", {
+      series: {
+        ...series,
+        id: series.mediaid,
+        name: series.title,
+        first_air_date: series.release_date
+      }
+    });
   };
   renderSmallSeries = (series, index) => {
     // console.log("Mov : ", series);
@@ -150,12 +180,28 @@ class userProfile extends Component {
           </View>
         </View>
         <View style={styles.userInfo}>
-          <Image
-            source={{
-              uri: userInfo.photo || userInfo.avatarurl
-            }}
-            style={styles.profileImg}
-          />
+          <TouchableOpacity
+            onPress={this.updateImg}
+            style={styles.profileImgBtn}
+          >
+            <Image
+              source={{
+                uri: this.state.userImg || userInfo.photo || userInfo.avatarurl
+              }}
+              style={styles.profileImg}
+            />
+            <Icon
+              name="edit"
+              type="FontAwesome5"
+              style={{
+                color: mainColor,
+                position: "relative",
+                top: "-15%",
+                left: "70%"
+              }}
+              size="large"
+            />
+          </TouchableOpacity>
           <Text style={styles.userName}>
             {" "}
             {userInfo.name || userInfo.fullname}{" "}
@@ -216,8 +262,8 @@ class userProfile extends Component {
 const mapStateToProps = state => ({
   userInfo: state.auth.userInfo,
   moviesList: state.wlist.movieWL,
-  seriesList:state.wlist.seriesWL,
+  seriesList: state.wlist.seriesWL,
   loadList: state.wlist.loadList
 });
 
-export default connect(mapStateToProps, { googleLogout,getList })(userProfile);
+export default connect(mapStateToProps, { googleLogout, getList })(userProfile);

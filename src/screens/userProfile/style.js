@@ -36,6 +36,17 @@ export default styles = StyleSheet.create({
   },
 
   profileImg: {
+    width: "100%",
+    height: "100%",
+    borderRadius: 0.1 * height,
+    // marginBottom: 0.02 * height,
+    // marginTop:-0.2*height,
+    // borderWidth:10,
+    // borderColor:"#eee",
+    // zIndex:50
+    
+  },
+  profileImgBtn: {
     width: 0.2 * height,
     height: 0.2 * height,
     borderRadius: 0.1 * height,
@@ -43,6 +54,7 @@ export default styles = StyleSheet.create({
     marginTop:-0.2*height,
     borderWidth:10,
     borderColor:"#eee",
+    zIndex:50
     
   },
   userName: {

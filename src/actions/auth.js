@@ -82,6 +82,7 @@ export const signIn = msg => async dispatch => {
         throw res.error; 
       } else {
         console.log("login Success : ", res);
+        res.avatarurl = `${customBaseUrl}/${res.avatarurl}` ; 
         AsyncStorage.setItem("MLuserInfo", JSON.stringify(res)); 
         dispatch({
           type: SETUSERDATA,
@@ -117,7 +118,10 @@ export const signUp = msg => async dispatch => {
         });
         throw res.error; 
       } else {
+        res.avatarurl = `${customBaseUrl}/${res.avatarurl}` ; 
+        
         console.log("user created : ", res);
+
         AsyncStorage.setItem("MLuserInfo",JSON.stringify(res)); 
 
         dispatch({
@@ -167,3 +171,4 @@ console.log("loading : ", loading);
     payload:loading
   })
 }
+
