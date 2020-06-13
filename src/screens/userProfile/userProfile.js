@@ -37,14 +37,25 @@ class userProfile extends Component {
       loadList: this.props.loadList,
       moviesList: [],
       seriesList: [],
-      userImg: ""
+      userImg:
+        "https://provisionhealthcare.com/wp-content/uploads/2018/11/user-avatar.jpg"
     };
   }
 
   componentDidMount = async () => {
+    let { userInfo } = this.props;
     await this.props.getList();
+    let userImg = userInfo.avatarurl;
     console.log("P : ", this.props.moviesList);
-
+    console.log("user info screen : ", userInfo);
+    if (userInfo.avatarurl.startsWith("images"))
+      userImg = `${customBaseUrl}/${userInfo.avatarurl}`;
+    
+    console.log("userIMG : ", userImg);
+    
+      this.setState({
+      userImg
+    });
     // this.props.navigation.addListener("didFocus", async () => {
 
     // });
@@ -98,7 +109,7 @@ class userProfile extends Component {
       );
 
       formData.append("new-image", res);
-console.log("FD : ",formData);
+      console.log("FD : ", formData);
 
       await fetch(`${customBaseUrl}/users/updateimg`, {
         method: "POST",
@@ -110,13 +121,20 @@ console.log("FD : ",formData);
         body: formData
       })
         .then(res => {
-          console.log("EEEE : ",res);
-          
-          return res.json()})
-        .then(res => {
-          console.log("res : ", res);
+          console.log("EEEE : ", res);
+
+          return res.json();
+        })
+        .then(async res => {
+          console.log("res Back : ", res);
+          let tempUsrData =  JSON.parse (await AsyncStorage.getItem("MLuserInfo")) ; 
+          tempUsrData.avatarurl = res.imgUrl ; 
+          await AsyncStorage.setItem("MLuserInfo", JSON.stringify(tempUsrData))
         })
         .catch(err => console.log("upload err: ", err));
+
+
+
       this.setState({
         userImg: res.uri
       });
@@ -186,7 +204,7 @@ console.log("FD : ",formData);
           >
             <Image
               source={{
-                uri: this.state.userImg || userInfo.photo || userInfo.avatarurl
+                uri: this.state.userImg
               }}
               style={styles.profileImg}
             />
@@ -261,8 +279,8 @@ console.log("FD : ",formData);
 
 const mapStateToProps = state => ({
   userInfo: state.auth.userInfo,
-  moviesList: state.wlist.movieWL,
-  seriesList: state.wlist.seriesWL,
+  moviesList: state.wlist.movieWL || [],
+  seriesList: state.wlist.seriesWL || [],
   loadList: state.wlist.loadList
 });
 

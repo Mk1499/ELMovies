@@ -17,14 +17,35 @@ export const googleLogin = () => async dispatch => {
   try {
     await GoogleSignin.hasPlayServices();
     const userInfo = await GoogleSignin.signIn();
+    
+     console.log("before login : ", userInfo.user);
+      
 
-    Navigation.navigate("Home");
-    dispatch({
-      type: SETUSERDATA,
-      payload: userInfo
-    });
-    await AsyncStorage.setItem("MLuserInfo", JSON.stringify(userInfo.user))
-    console.log("User Info : ", userInfo);
+     
+    await fetch(`${customBaseUrl}/users/social-login`, {
+      method: "POST",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(userInfo.user)
+    })
+    .then(res => res.json())
+    .then(async res => {
+      console.log("slogin : ",res);
+      
+      dispatch({
+        type: SETUSERDATA,
+        payload: res
+      });
+      await AsyncStorage.setItem("MLuserInfo", JSON.stringify(res))
+      console.log("User Info res : ", res);
+      Navigation.replace("Home");
+
+    }).catch(err => console.log("Social Login : ",err)
+    )
+
+
   } catch (error) {
     console.log("error : ", error.code);
     console.log("Res : ", error.resolution);
@@ -88,7 +109,7 @@ export const signIn = msg => async dispatch => {
           type: SETUSERDATA,
           payload: res
         });
-        Navigation.navigate("Home");
+        Navigation.replace("Home");
       }
     })
 

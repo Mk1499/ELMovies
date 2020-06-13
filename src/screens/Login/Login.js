@@ -172,7 +172,7 @@ class Login extends Component {
             </Text>
           </View>
           <GoogleSigninButton
-            style={{ width: 192, height: 48 }}
+            style={{ width: 0.7*Width, height:0.1*Height }}
             size={GoogleSigninButton.Size.Wide}
             color={GoogleSigninButton.Color.Light}
             onPress={this.props.googleLogin}
