@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/../node_modules/@react-native-community/art/android/react-native-community_art.iml" filepath="$PROJECT_DIR$/../node_modules/@react-native-community/art/android/react-native-community_art.iml" />
       <module fileurl="file://$PROJECT_DIR$/../node_modules/@react-native-community/google-signin/android/react-native-community_google-signin.iml" filepath="$PROJECT_DIR$/../node_modules/@react-native-community/google-signin/android/react-native-community_google-signin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-document-picker/android/react-native-document-picker.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-document-picker/android/react-native-document-picker.iml" />
       <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-gesture-handler/android/react-native-gesture-handler.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-gesture-handler/android/react-native-gesture-handler.iml" />
       <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-linear-gradient/android/react-native-linear-gradient.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-linear-gradient/android/react-native-linear-gradient.iml" />
       <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-reanimated/android/react-native-reanimated.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-reanimated/android/react-native-reanimated.iml" />
@@ -13,6 +14,8 @@
       <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-share/android/react-native-share.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-share/android/react-native-share.iml" />
       <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-shared-element/android/react-native-shared-element.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-shared-element/android/react-native-shared-element.iml" />
       <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-splash-screen/android/react-native-splash-screen.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-splash-screen/android/react-native-splash-screen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-toasty/android/react-native-toasty.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-toasty/android/react-native-toasty.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-youtube/android/react-native-youtube.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-youtube/android/react-native-youtube.iml" />
     </modules>
   </component>
 </project>

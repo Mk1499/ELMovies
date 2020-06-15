@@ -236,7 +236,7 @@ import { RNToasty } from 'react-native-toasty';
                         { color: "#0e95ad", alignSelf: "center" }
                       ]}
                     />
-                    <Text style={{ color: "#0e95ad" }}>Share Poster</Text>
+                    <Text style={{ color: "#0e95ad",alignSelf:'center',width:"30%" }}>Share Poster</Text>
                   </TouchableOpacity>
                 </View>
                 <View style={styles.iconCont}>

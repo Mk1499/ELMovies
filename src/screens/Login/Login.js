@@ -33,8 +33,8 @@ class Login extends Component {
       textWidth: new Animated.Value(0),
       logoOpacity: new Animated.Value(0.5),
       logoTransform: new Animated.Value(0),
-      email: "MKe@mail.com",
-      password: "123456789"
+      email: "",
+      password: ""
     };
     this.rotateValue = new Animated.Value(0);
   }
@@ -105,7 +105,7 @@ class Login extends Component {
       };
       await this.props.signIn(msg).catch(err => console.log(("error: ", err)));
     } else {
-      this.props.loadingFun(false)
+       this.props.loadingFun(false)
       RNToasty.Error({
         title:"Sorry but email and password must be Entered"
       })
@@ -172,7 +172,7 @@ class Login extends Component {
             </Text>
           </View>
           <GoogleSigninButton
-            style={{ width: 0.7*Width, height:0.1*Height }}
+            style={{ width: 0.65*Width, height:0.1*Height }}
             size={GoogleSigninButton.Size.Wide}
             color={GoogleSigninButton.Color.Light}
             onPress={this.props.googleLogin}

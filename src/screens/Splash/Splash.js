@@ -97,10 +97,10 @@ class Splash extends Component {
           <View style={styles.LogoContainer}>
             <Animated.View style={{ 
               opacity: this.state.logoOpacity,
-              transform: [{ rotate: rotation }]
+              
               }}>
-              <Image
-                style={[styles.logoImg]}
+              <Animated.Image
+                style={[styles.logoImg,{transform: [{ rotate: rotation }]}]}
                 source={require("../../../assets/images/logo2.png")}
                 resizeMode="contain"
               />

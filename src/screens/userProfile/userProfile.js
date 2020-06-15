@@ -111,6 +111,9 @@ class userProfile extends Component {
       formData.append("new-image", res);
       console.log("FD : ", formData);
 
+      this.setState({
+        userImg: res.uri
+      });
       await fetch(`${customBaseUrl}/users/updateimg`, {
         method: "POST",
         mode: "cors",
@@ -135,9 +138,7 @@ class userProfile extends Component {
 
 
 
-      this.setState({
-        userImg: res.uri
-      });
+      
     } catch (err) {
       if (DocumentPicker.isCancel(err)) {
         // User cancelled the picker, exit any dialogs or menus and move on

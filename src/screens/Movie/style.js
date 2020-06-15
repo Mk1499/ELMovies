@@ -35,6 +35,7 @@ export const styles = StyleSheet.create({
     height: 0.15 * Width,
     backgroundColor: mainColor,
     justifyContent: "center",
+    alignItems:'center',
     borderRadius: 25,
     zIndex: 2000,
     shadowColor: "#000",
@@ -64,8 +65,8 @@ elevation: 24,
   },
   moviePoster: {
     width: 0.45 * Width,
-    height: 0.35 * Height,
-    borderRadius: 15,
+    height: 0.45 * Width,
+    borderRadius: 0.5 * Width,
     backgroundColor: "#fff"
   },
   favIcon: {

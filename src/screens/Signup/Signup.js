@@ -22,7 +22,7 @@ import { Form, Input, Item } from "native-base";
 import Btn from "../../components/Button/Button";
 import { RNToasty } from 'react-native-toasty';
 
-const { width: Width } = Dimensions.get("window");
+const { width: Width,height:Height } = Dimensions.get("window");
 
 class Signup extends Component {
   constructor(props) {
@@ -84,21 +84,29 @@ class Signup extends Component {
 
   signUp = async () => {
     console.log("Sign Up...");
-    if (this.state.password1 === this.state.password2) {
-      this.props.loadingFun(true);
-     
-      let msg = {
-        fullName: this.state.fullname,
-        email: this.state.email,
-        phone: "01121858581",
-        password: this.state.password1
-      };
-      await this.props.signUp(msg);
-    } else {
-      this.props.loadingFun(false);
+    let {password1,password2,email,fullname} = this.state ; 
+    if (password1 && password2 && email && fullname){
 
+      if (password1 === password2) {
+        this.props.loadingFun(true);
+        
+        let msg = {
+          fullName: fullname,
+          email: email,
+          phone: "01121858581",
+          password: password1
+        };
+        await this.props.signUp(msg);
+      } else {
+        this.props.loadingFun(false);
+        
+        RNToasty.Error({
+          title:"Sorry but two passwords must be the same"
+        })
+      }
+    } else {
       RNToasty.Error({
-        title:"Sorry but two passwords must be the same"
+        title:"Sorry but all Feilds must be Entered"
       })
     }
   };
@@ -175,7 +183,7 @@ class Signup extends Component {
             <Btn title="Sign Up" action={this.signUp} />
           </Form>
           <GoogleSigninButton
-            style={{ width: 192, height: 48 }}
+            style={{ width: 0.65*Width, height:0.1*Height }}
             size={GoogleSigninButton.Size.Wide}
             color={GoogleSigninButton.Color.Light}
             onPress={this.props.googleLogin}

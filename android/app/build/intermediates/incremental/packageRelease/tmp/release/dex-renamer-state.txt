@@ -1,0 +1,4 @@
+#Mon Jun 15 00:16:29 EET 2020
+base.0=/media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/build/intermediates/transforms/dexMerger/release/0
+path.0=classes.dex
+renamed.0=classes.dex

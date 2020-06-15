@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "/media/mkhaled/46229A46229A3B3F/Applications/Portfolio Projects/MoviesApp/android/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-v26/values-v26.xml",
+            "map": [
+                {
+                    "source": "/home/mkhaled/.gradle/caches/transforms-2/files-2.1/a0cb16bebedb3b55d7f80c2eaa87484c/res/values-v26/values-v26.xml",
+                    "from": {
+                        "startLines": "2,3,4,8,12,16",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "55,130,217,431,657,896",
+                        "endLines": "2,3,7,11,15,16",
+                        "endColumns": "74,86,12,12,12,92",
+                        "endOffsets": "125,212,426,652,891,984"
+                    }
+                }
+            ]
+        }
+    ]
+}

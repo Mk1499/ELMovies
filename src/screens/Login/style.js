@@ -29,7 +29,7 @@ export default styles = StyleSheet.create({
   },
   logoImg: {
     width: 0.2 * width,
-    height: 0.2 * width,
+    height: 0.2 * height,
     shadowColor: "#000",
     shadowOffset: {
       width: 0,

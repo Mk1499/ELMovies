@@ -17,7 +17,9 @@ export default styles = StyleSheet.create({
     backgroundColor: "rgba(254,44,84,0.5)"
   },
   LogoContainer: {
-    flexDirection: "row"
+    // flexDirection: "row",
+    width:"100%",
+    alignItems:'center'
   },
   form: {
     width: 0.9 * width,
@@ -28,8 +30,8 @@ export default styles = StyleSheet.create({
     borderColor: "#fff"
   },
   logoImg: {
-    width: 0.3 * width,
-    height: 0.3 * width,
+    width: 0.25 * width,
+    height: 0.15 * height,
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
@@ -43,14 +45,14 @@ export default styles = StyleSheet.create({
   appName: {
     color: "#eee",
     // fontWeight: "bold",
-    fontSize: 0.11 * width,
-    width: 0.4 * width,
+    fontSize: 0.1 * width,
+    width: 1.2* width,
     fontFamily: "Oswald"
   },
   appNameView: {
     justifyContent: "center",
-    overflow: "hidden",
-    width: 50
+    // overflow: "hidden",
+    width: "100%"
   },
   signUpHeadText:{
     textAlign:'center',
