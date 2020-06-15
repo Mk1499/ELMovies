@@ -25,4 +25,13 @@ Dillinger uses a number of open source projects to work properly:
 ```sh
 $ react-native run-android
 ```
+### Demo 
+* You can See Deme  [Here](https://www.youtube.com/watch?v=9CGEDH7MAKk) 
 
+## Screenshots 
+
+![ScreenShots](ScreenShots/login.jpeg)
+![ScreenShots](ScreenShots/actors.jpeg)
+![ScreenShots](ScreenShots/actorProfile.jpeg)
+![ScreenShots](ScreenShots/series.jpeg)
+![ScreenShots](ScreenShots/profile.jpeg)
